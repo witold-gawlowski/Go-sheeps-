@@ -1,0 +1,6 @@
+*.csproj
+*.sln
+*.suo
+Stage2Project/Library/
+Stage2Project/Temp/
+Builds/
