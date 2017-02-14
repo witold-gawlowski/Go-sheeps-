@@ -45,6 +45,7 @@ public class FlockWithGroup : MonoBehaviour
     }
 
     FlockWithBuddies();
+    mBody.AddForce(transform.forward*90);
   }
 
   private void UpdateBuddyList()
@@ -117,5 +118,6 @@ public class FlockWithGroup : MonoBehaviour
       mBody.AddForce((align * allignCoefficient + cohesion * cohesionCoefficient + avoid * avoidCoefficient) * Time.deltaTime);
       
     }
+   
   }
 }

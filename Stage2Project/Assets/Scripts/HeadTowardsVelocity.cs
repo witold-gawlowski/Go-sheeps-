@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class HeadTowardsVelocity : MonoBehaviour
 {
-  [SerializeField] private float torqueMultiplier = 30.0f;
+  [SerializeField]
+  private float turnSpeed = 1.0f;
+
+  [SerializeField]
+  private float minimumVelocity = 1.0f;
+
+
+
   private Rigidbody mBody;
 
   void Start()
@@ -14,9 +21,9 @@ public class HeadTowardsVelocity : MonoBehaviour
 
   void Update()
   {
-    if (mBody.velocity.magnitude > 0.4f)
+    if (mBody.velocity.magnitude > minimumVelocity)
     {
-      mBody.AddTorque(Vector3.Cross(transform.forward, mBody.velocity)*torqueMultiplier);
+      transform.forward += mBody.velocity.normalized * turnSpeed;//* Mathf.Pow(mBody.velocity.magnitude, 1);
     }
   }
 }
