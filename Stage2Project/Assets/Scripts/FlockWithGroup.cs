@@ -9,9 +9,6 @@ public class FlockWithGroup : MonoBehaviour
   private GroupTag.Group GroupCode;
 
   [SerializeField]
-  private float Speed;
-
-  [SerializeField]
   private float BuddyDistance = 100.0f;
 
   [SerializeField]
@@ -21,6 +18,11 @@ public class FlockWithGroup : MonoBehaviour
   private float CheckForBuddiesInterval = 10.0f;
 
   [SerializeField] private float cohesionCoefficient = 0.1f;
+
+  [SerializeField]
+  private float avoidCoefficient = 0.07f;
+
+  [SerializeField] private float allignCoefficient = 0.4f;
 
   private List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
@@ -78,21 +80,24 @@ public class FlockWithGroup : MonoBehaviour
     if (mCurrentBuddies.Count > 0)
     {
       Vector3 align = Vector3.zero;
-      Vector3 cohesion = Vector3.zero;
       Vector3 avoid = Vector3.zero;
-      Vector3 myCohesion = Vector3.zero;
+      Vector3 cohesion = Vector3.zero;
+
+      int avoidCount = 0;
 
       for (int count = 0; count < mCurrentBuddies.Count; ++count)
       {
         Rigidbody body = mCurrentBuddies[count].GetComponent<Rigidbody>();
-        align += body.velocity;
-        cohesion += mCurrentBuddies[count].transform.position;
-        myCohesion += WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
+        Vector3 buddyToThis = WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
           transform.position);
-        
-        if ((mCurrentBuddies[count].transform.position - transform.position).magnitude < AvoidDistance)
+        float mag = buddyToThis.magnitude;
+        align += body.velocity;
+        cohesion += buddyToThis;
+
+        if (mag < AvoidDistance)
         {
-          avoid += mCurrentBuddies[count].transform.position;
+          avoidCount++;
+          avoid -= buddyToThis.normalized*(1/(mag+0.1f));
         }
       }
 
@@ -100,19 +105,17 @@ public class FlockWithGroup : MonoBehaviour
       *  we should be adding the difference beteween the average velocity and our velocity instead of 
       *  average velocity.
       */
-
-      align /= mCurrentBuddies.Count;
+      align = align/mCurrentBuddies.Count - mBody.velocity;
+      if (avoidCount > 0)
+      {
+        //avoid /= avoidCount;
+      }
       cohesion /= mCurrentBuddies.Count;
-      avoid /= mCurrentBuddies.Count;
-      myCohesion /= mCurrentBuddies.Count;
-
-      align.Normalize();
-      cohesion = cohesion - transform.position;
-      cohesion.Normalize();
-      avoid = transform.position - avoid;
-      avoid.Normalize();
-
-      mBody.AddForce((align + myCohesion * cohesionCoefficient + avoid) * Speed * Time.deltaTime);
+      Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
+      //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
+      //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
+      mBody.AddForce((align * allignCoefficient + cohesion * cohesionCoefficient + avoid * avoidCoefficient) * Time.deltaTime);
+      
     }
   }
 }

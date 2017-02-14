@@ -30,9 +30,10 @@ public class MagnetizedByPlayer : MonoBehaviour
     if (mPlayer != null)
     {
       Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayer.transform.position);
+      float mag = playerToBoid.magnitude;
       if (playerToBoid.magnitude <= MinimumDistance)
       {
-        mBody.AddForce((MagnetizeType == Type.Repel ? playerToBoid : -playerToBoid) * RepelForce * Time.deltaTime);
+        mBody.AddForce((MagnetizeType == Type.Repel ? 1 : -1)*playerToBoid.normalized *1/mag* RepelForce * Time.deltaTime);
       }
     }
   }

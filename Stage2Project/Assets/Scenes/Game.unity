@@ -186,7 +186,7 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 114645105814637946, guid: 7ad876dc80acfcd48a1fd4b15250b137,
     type: 2}
   Arena: {fileID: 1877346107}
-  TimeBetweenSpawns: 2
+  TimeBetweenSpawns: 0.3
 --- !u!4 &1236782920
 Transform:
   m_ObjectHideFlags: 0
