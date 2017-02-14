@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 65423777831391666}
   - component: {fileID: 23819890774090860}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338618699978626}
   m_LocalRotation: {x: 0.70710194, y: -0.0026160995, z: 0.0026160995, w: 0.70710194}
-  m_LocalPosition: {x: 0, y: -0.47000006, z: 0.08}
+  m_LocalPosition: {x: 0, y: -0.71, z: 0.08}
   m_LocalScale: {x: 2.38, y: 1.98, z: 1}
   m_Children: []
   m_Father: {fileID: 4496068166659228}
@@ -92,8 +92,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.062073, y: -1.8773281e-17, z: 9.762686}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 2}
+  m_LocalPosition: {x: -5.353161, y: 5.88, z: 0.57655096}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2.5}
   m_Children:
   - {fileID: 4601280245422454}
   - {fileID: 4458585293796970}
@@ -126,7 +126,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 659dd3111e01d49418c4a5a9a3de9789, type: 2}
+  - {fileID: 2100000, guid: 33af4c9d8482d8f4a8608a7de4d750cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -325,11 +325,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroupCode: 1
   BuddyDistance: 20
-  AvoidDistance: 3
+  AvoidDistance: 5
   CheckForBuddiesInterval: 2
   cohesionCoefficient: 1000
   avoidCoefficient: 6000
-  allignCoefficient: 400
+  allignCoefficient: 800
   forwardDrive: 70
 --- !u!212 &212285496020193396
 SpriteRenderer:
