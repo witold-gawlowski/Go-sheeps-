@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class GroupTag : MonoBehaviour
 {
-    public enum Group { One, Two, Three, Four, Five, Six, Seven, Eight, Nine }
+  public enum Group { White, Black, Shaved}
 
-    [SerializeField]
-    private Group GroupCode;
+  public Material[] materials;
 
-    public Group Affiliation { get { return GroupCode; } }
+  [SerializeField]
+  private Group GroupCode;
+
+  public Group Affiliation
+  {
+    get { return GroupCode; }
+    set { GroupCode = value; }
+  }
 }

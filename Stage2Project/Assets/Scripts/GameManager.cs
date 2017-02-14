@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
   [SerializeField]
   private float TimeBetweenSpawns;
 
-  [SerializeField]
-  private float BlackSheepFraction = 0.2f;
+  public float BlackSheepFraction = 0.2f;
 
   private List<GameObject> mObjects;
   private Player mPlayer;

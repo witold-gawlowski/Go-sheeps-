@@ -6,9 +6,6 @@ using UnityEngine;
 public class FlockWithGroup : MonoBehaviour
 {
   [SerializeField]
-  private GroupTag.Group GroupCode;
-
-  [SerializeField]
   private float BuddyDistance = 100.0f;
 
   [SerializeField]
@@ -33,12 +30,14 @@ public class FlockWithGroup : MonoBehaviour
   private List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
   private float mCountDownToCheck;
+  private GroupTag groupTag;
 
   void Awake()
   {
     mCurrentBuddies = new List<GroupTag>();
     mBody = GetComponent<Rigidbody>();
     mCountDownToCheck = 0.0f;
+    groupTag = GetComponent<GroupTag>();
   }
 
   void Update()
@@ -100,7 +99,7 @@ public class FlockWithGroup : MonoBehaviour
         Vector3 buddyToThis = WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
           transform.position);
         float mag = buddyToThis.magnitude;
-        if (mCurrentBuddies[count].GetComponent<GroupTag>().Affiliation.Equals(GroupCode))
+        if (mCurrentBuddies[count].GetComponent<GroupTag>().Affiliation.Equals(groupTag.Affiliation))
         {
           align += body.velocity;
           cohesion += buddyToThis;
@@ -128,9 +127,10 @@ public class FlockWithGroup : MonoBehaviour
         //avoid /= avoidCount;
       }
       cohesion /= mCurrentBuddies.Count;
-      Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
+      //Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
       //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
+      //Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
       mBody.AddForce((align * allignCoefficient +
         cohesion * cohesionCoefficient +
         avoid * avoidCoefficient +
