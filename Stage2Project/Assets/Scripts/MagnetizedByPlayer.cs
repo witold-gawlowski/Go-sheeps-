@@ -16,20 +16,20 @@ public class MagnetizedByPlayer : MonoBehaviour
   [SerializeField]
   private Type MagnetizeType = Type.Repel;
 
-  private Player mPlayer;
+  private Player[] mPlayers;
   private Rigidbody mBody;
 
   void Awake()
   {
-    mPlayer = FindObjectOfType<Player>();
+    mPlayers = FindObjectsOfType<Player>();
     mBody = GetComponent<Rigidbody>();
   }
 
   void Update()
   {
-    if (mPlayer != null)
+    for(int i=0; i<mPlayers.Length; i++)
     {
-      Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayer.transform.position);
+      Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayers[i].transform.position);
       float mag = playerToBoid.magnitude;
       if (playerToBoid.magnitude <= MinimumDistance)
       {

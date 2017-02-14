@@ -41,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1889219130319842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.6978848, y: 0.5, z: -0.5299351}
-  m_LocalScale: {x: 0.52, y: 0.65, z: 1.64}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4000
+  playerID: 1
 --- !u!114 &114645908955841662
 MonoBehaviour:
   m_ObjectHideFlags: 1
