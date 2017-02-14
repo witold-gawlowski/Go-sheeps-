@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1117173195133182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.415}
-  m_LocalScale: {x: 0.47, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.575776, y: 0.48680836, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4912416917475644}
   m_RootOrder: 0
@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413409648508210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.224688, y: -0.7281437, z: -15.930763}
+  m_LocalPosition: {x: -23.990824, y: 7.61, z: 5.8000226}
   m_LocalScale: {x: 1.3, y: 1.3, z: 2}
   m_Children:
   - {fileID: 4491562064705534}
@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60fd5966a0fec348bda510bfc03b59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroupCode: 0
   BuddyDistance: 10
   AvoidDistance: 5
   CheckForBuddiesInterval: 2
@@ -313,10 +312,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaca863ffb242643af67205a09fb000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shavedBellySize: 0.7
+  shavedBellySize: 0.4
   grownFurWidth: 1
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+  furGrowthDuration: 20
 --- !u!114 &114358815225865436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824cde7afce24c468ee05e1cf360065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials: []
   GroupCode: 0
 --- !u!114 &114506816992003388
 MonoBehaviour:

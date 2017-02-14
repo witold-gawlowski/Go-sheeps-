@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
   private Player mPlayer;
   private State mState;
   private float mNextSpawn;
+  private Text moneyText;
 
   void Awake()
   {
