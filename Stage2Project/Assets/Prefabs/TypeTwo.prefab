@@ -324,12 +324,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GroupCode: 1
-  BuddyDistance: 20
-  AvoidDistance: 5
+  BuddyDistance: 10
+  AvoidDistance: 3
   CheckForBuddiesInterval: 2
   cohesionCoefficient: 1000
   avoidCoefficient: 6000
-  allignCoefficient: 800
+  allignCoefficient: 400
+  separationCoefficient: 10000
   forwardDrive: 70
 --- !u!212 &212285496020193396
 SpriteRenderer:

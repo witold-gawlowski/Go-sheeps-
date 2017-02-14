@@ -25,6 +25,8 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private float allignCoefficient = 0.4f;
 
+  [SerializeField] private float separationCoefficient = 200.0f;
+
   [SerializeField]
   private float forwardDrive = 80.0f;
 
@@ -58,7 +60,7 @@ public class FlockWithGroup : MonoBehaviour
 
     for (int count = 0; count < individuals.Length; ++count)
     {
-      if (individuals[count].gameObject != gameObject && individuals[count].Affiliation == GroupCode)
+      if (individuals[count].gameObject != gameObject)
       {
         Vector3 difference = WrapPosition.WrapDifference(individuals[count].transform.position, transform.position);
         if (difference.magnitude <= BuddyDistance)
@@ -87,6 +89,8 @@ public class FlockWithGroup : MonoBehaviour
       Vector3 align = Vector3.zero;
       Vector3 avoid = Vector3.zero;
       Vector3 cohesion = Vector3.zero;
+      //this force compomenet separates different breeds
+      Vector3 separation = Vector3.zero;
 
       int avoidCount = 0;
 
@@ -96,14 +100,22 @@ public class FlockWithGroup : MonoBehaviour
         Vector3 buddyToThis = WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
           transform.position);
         float mag = buddyToThis.magnitude;
-        align += body.velocity;
-        cohesion += buddyToThis;
-
-        if (mag < AvoidDistance)
+        if (mCurrentBuddies[count].GetComponent<GroupTag>().Affiliation.Equals(GroupCode))
         {
-          avoidCount++;
-          avoid -= buddyToThis.normalized*(1/(mag+0.1f));
+          align += body.velocity;
+          cohesion += buddyToThis;
+
+          if (mag < AvoidDistance)
+          {
+            avoidCount++;
+            avoid -= buddyToThis.normalized * (1 / (mag + 0.1f));
+          }
         }
+        else
+        {
+          separation -= buddyToThis.normalized * (1 / (mag + 0.1f));
+        }
+        
       }
 
       /* Align now is an average velocity of a group.
@@ -119,7 +131,11 @@ public class FlockWithGroup : MonoBehaviour
       Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
       //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
-      mBody.AddForce((align * allignCoefficient + cohesion * cohesionCoefficient + avoid * avoidCoefficient) * Time.deltaTime);
+      mBody.AddForce((align * allignCoefficient +
+        cohesion * cohesionCoefficient +
+        avoid * avoidCoefficient +
+        separation * separationCoefficient
+        ) * Time.deltaTime);
       
     }
    
