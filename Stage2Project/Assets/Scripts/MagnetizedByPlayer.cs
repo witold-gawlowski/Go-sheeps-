@@ -29,7 +29,7 @@ public class MagnetizedByPlayer : MonoBehaviour
   {
     if (mPlayer != null)
     {
-      Vector3 playerToBoid = transform.position - mPlayer.transform.position;
+      Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayer.transform.position);
       if (playerToBoid.magnitude <= MinimumDistance)
       {
         mBody.AddForce((MagnetizeType == Type.Repel ? playerToBoid : -playerToBoid) * RepelForce * Time.deltaTime);
