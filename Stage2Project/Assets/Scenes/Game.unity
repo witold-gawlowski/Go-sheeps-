@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPrefabs:
   - {fileID: 1413409648508210, guid: d0d92b2adf307e0418dc15f6d6cd6bb9, type: 2}
+  - {fileID: 1162436080353560, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   PlayerPrefab: {fileID: 114645105814637946, guid: 7ad876dc80acfcd48a1fd4b15250b137,
     type: 2}
   Arena: {fileID: 1877346107}

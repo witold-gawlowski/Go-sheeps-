@@ -4,96 +4,99 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum State { Paused, Playing }
+  public enum State { Paused, Playing }
 
-    [SerializeField]
-    private GameObject [] SpawnPrefabs;
+  [SerializeField]
+  private GameObject[] SpawnPrefabs;
 
-    [SerializeField]
-    private Player PlayerPrefab;
+  [SerializeField]
+  private Player PlayerPrefab;
 
-    [SerializeField]
-    private Arena Arena;
+  [SerializeField]
+  private Arena Arena;
 
-    [SerializeField]
-    private float TimeBetweenSpawns;
+  [SerializeField]
+  private float TimeBetweenSpawns;
 
-    private List<GameObject> mObjects;
-    private Player mPlayer;
-    private State mState;
-    private float mNextSpawn;
+  [SerializeField]
+  private float BlackSheepFraction = 0.2f;
 
-    void Awake()
-    {
-        mPlayer = Instantiate(PlayerPrefab);
-      mPlayer.playerID = 1;
+  private List<GameObject> mObjects;
+  private Player mPlayer;
+  private State mState;
+  private float mNextSpawn;
+
+  void Awake()
+  {
     mPlayer = Instantiate(PlayerPrefab);
-      mPlayer.playerID = 2;
+    mPlayer.playerID = 1;
+    mPlayer = Instantiate(PlayerPrefab);
+    mPlayer.playerID = 2;
     mPlayer.transform.parent = transform;
 
-        ScreenManager.OnNewGame += ScreenManager_OnNewGame;
-        ScreenManager.OnExitGame += ScreenManager_OnExitGame;
-    }
+    ScreenManager.OnNewGame += ScreenManager_OnNewGame;
+    ScreenManager.OnExitGame += ScreenManager_OnExitGame;
+  }
 
-    void Start()
-    {
-        Arena.Calculate();
-        mPlayer.enabled = false;
-        mState = State.Paused;
-    }
+  void Start()
+  {
+    Arena.Calculate();
+    mPlayer.enabled = false;
+    mState = State.Paused;
+  }
 
-    void Update()
+  void Update()
+  {
+    if (mState == State.Playing)
     {
-        if( mState == State.Playing)
+      mNextSpawn -= Time.deltaTime;
+      if (mNextSpawn <= 0.0f)
+      {
+        if (mObjects == null)
         {
-            mNextSpawn -= Time.deltaTime;
-            if( mNextSpawn <= 0.0f )
-            {
-                if (mObjects == null)
-                {
-                    mObjects = new List<GameObject>();
-                }
-
-                int indexToSpawn = Random.Range(0, SpawnPrefabs.Length);
-                GameObject spawnObject = SpawnPrefabs[indexToSpawn];
-                GameObject spawnedInstance = Instantiate(spawnObject);
-                spawnedInstance.transform.parent = transform;
-                mObjects.Add(spawnedInstance);
-                mNextSpawn = TimeBetweenSpawns;
-            }
-        }
-    }
-
-    private void BeginNewGame()
-    {
-        if (mObjects != null)
-        {
-            for (int count = 0; count < mObjects.Count; ++count)
-            {
-                Destroy(mObjects[count]);
-            }
-            mObjects.Clear();
+          mObjects = new List<GameObject>();
         }
 
-        mPlayer.transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+        int indexToSpawn = Random.value > BlackSheepFraction ? 0 : 1;
+        GameObject spawnObject = SpawnPrefabs[indexToSpawn];
+        GameObject spawnedInstance = Instantiate(spawnObject);
+        spawnedInstance.transform.parent = transform;
+        mObjects.Add(spawnedInstance);
         mNextSpawn = TimeBetweenSpawns;
-        mPlayer.enabled = true;
-        mState = State.Playing;
+      }
+    }
+  }
+
+  private void BeginNewGame()
+  {
+    if (mObjects != null)
+    {
+      for (int count = 0; count < mObjects.Count; ++count)
+      {
+        Destroy(mObjects[count]);
+      }
+      mObjects.Clear();
     }
 
-    private void EndGame()
-    {
-        mPlayer.enabled = false;
-        mState = State.Paused;
-    }
+    mPlayer.transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+    mNextSpawn = TimeBetweenSpawns;
+    mPlayer.enabled = true;
+    mState = State.Playing;
+  }
 
-    private void ScreenManager_OnNewGame()
-    {
-        BeginNewGame();
-    }
+  private void EndGame()
+  {
+    mPlayer.enabled = false;
+    mState = State.Paused;
+  }
 
-    private void ScreenManager_OnExitGame()
-    {
-        EndGame();
-    }
+  private void ScreenManager_OnNewGame()
+  {
+    BeginNewGame();
+  }
+
+  private void ScreenManager_OnExitGame()
+  {
+    EndGame();
+  }
 }
