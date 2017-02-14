@@ -26,7 +26,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         mPlayer = Instantiate(PlayerPrefab);
-        mPlayer.transform.parent = transform;
+      mPlayer.playerID = 1;
+    mPlayer = Instantiate(PlayerPrefab);
+      mPlayer.playerID = 2;
+    mPlayer.transform.parent = transform;
 
         ScreenManager.OnNewGame += ScreenManager_OnNewGame;
         ScreenManager.OnExitGame += ScreenManager_OnExitGame;

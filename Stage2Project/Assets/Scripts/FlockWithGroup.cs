@@ -22,7 +22,11 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private float avoidCoefficient = 0.07f;
 
-  [SerializeField] private float allignCoefficient = 0.4f;
+  [SerializeField]
+  private float allignCoefficient = 0.4f;
+
+  [SerializeField]
+  private float forwardDrive = 80.0f;
 
   private List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
@@ -45,7 +49,7 @@ public class FlockWithGroup : MonoBehaviour
     }
 
     FlockWithBuddies();
-    mBody.AddForce(transform.forward*90);
+    mBody.AddForce(transform.forward*forwardDrive);
   }
 
   private void UpdateBuddyList()

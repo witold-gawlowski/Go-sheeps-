@@ -5,38 +5,54 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float Speed;
+  [SerializeField]
+  private float Speed;
 
-    private Rigidbody mBody;
+  private Rigidbody mBody;
 
-    void Awake()
+  public int playerID = 1;
+  private string horiAxisName;
+  private string vertAxisName;
+  private string altHoriAxisName;
+  private string altVertAxisName;
+
+
+  void Start()
+  {
+    horiAxisName = "c" + playerID.ToString() + "_Horizontal";
+    vertAxisName = "c" + playerID.ToString() + "_Vertical";
+    altHoriAxisName = "c" + playerID.ToString() + "_Alt_Horizontal";
+    altVertAxisName = "c" + playerID.ToString() + "_Alt_Vertical";
+  }
+
+  void Awake()
+  {
+    mBody = GetComponent<Rigidbody>();
+  }
+
+  void Update()
+  {
+    Vector3 direction = Vector3.zero;
+
+    if (Mathf.Abs(Input.GetAxis(horiAxisName))>0.2f)
     {
-        mBody = GetComponent<Rigidbody>();
+      direction += Vector3.right*Input.GetAxis(horiAxisName);
+    }
+    else if (Mathf.Abs(Input.GetAxis(altHoriAxisName)) > 0.2f)
+    {
+      direction += Vector3.right * Input.GetAxis(altHoriAxisName);
     }
 
-    void Update()
+    if (Mathf.Abs(Input.GetAxis(vertAxisName)) > 0.2f)
     {
-        Vector3 direction = Vector3.zero;
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction = -Vector3.right;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            direction = Vector3.right;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction += Vector3.forward;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            direction += -Vector3.forward;
-        }
-
-        mBody.AddForce(direction * Speed * Time.deltaTime);
+      direction += Vector3.forward * Input.GetAxis(vertAxisName);
     }
+    else if (Mathf.Abs(Input.GetAxis(altVertAxisName)) > 0.2f)
+    {
+      direction += Vector3.forward * Input.GetAxis(altVertAxisName);
+    }
+
+
+    mBody.AddForce(direction * Speed * Time.deltaTime);
+  }
 }
