@@ -40,11 +40,5 @@ void OnValidate()
     }
   }
 
-  public void OnTriggerStay(Collider other)
-  {
-    if (other.tag.Equals("Sheep"))
-    {
-      other.GetComponentInParent<Rigidbody>().AddForce(transform.forward * farmForce);
-    }
-  }
+  
 }

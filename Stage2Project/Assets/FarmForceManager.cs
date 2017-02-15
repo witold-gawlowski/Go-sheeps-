@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FarmRepulsion : MonoBehaviour
+public class FarmForceManager : MonoBehaviour
 {
   [SerializeField]
   private float farmRepulsionForce = 100.0f;

@@ -340,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 14
-  speedLimitingFactor: 10
+  MaxSpeed: 10
+  speedLimitingFactor: 40
 --- !u!114 &114724683158717006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,8 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepelForce: 100000
-  MinimumDistance: 50
+  RepelForce: 60000
+  MinimumDistance: 30
   MagnetizeType: 1
 --- !u!212 &212875235037473174
 SpriteRenderer:

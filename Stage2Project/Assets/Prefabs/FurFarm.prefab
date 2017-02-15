@@ -113,8 +113,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4793639069798792}
   - component: {fileID: 65896236562425078}
+  - component: {fileID: 114947565456617176}
   m_Layer: 0
-  m_Name: EntranceCollider
+  m_Name: Propeller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +343,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970030676636912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.177, y: 2.11, z: 8.9}
+  m_LocalPosition: {x: -33.97, y: 2.194563, z: -7.1}
   m_LocalScale: {x: 11.863171, y: 3.8438609, z: 12.747317}
   m_Children:
   - {fileID: 4957653141199212}
@@ -367,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1486288008246030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.012, y: 0, z: -0.204}
+  m_LocalPosition: {x: 0.012, y: 0, z: -0.214}
   m_LocalScale: {x: 0.9416212, y: 1, z: 1.2821509}
   m_Children: []
   m_Father: {fileID: 4756722846590886}
@@ -914,7 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816e9b328839ccb4c9177fe2364c36a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farmRepulsionForce: 800
+  farmRepulsionForce: 200
   forceAttenuationParam: 10
   entranceCollider: {fileID: 65896236562425078}
 --- !u!114 &114253618502885868
@@ -1001,6 +1002,18 @@ MonoBehaviour:
   farmForce: 400
   farmType: 1
   farmTypeImage: {fileID: 0}
+--- !u!114 &114947565456617176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486288008246030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68a932b30c02fb408ddf05addc3be23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmForce: 500
 --- !u!135 &135626880665891812
 SphereCollider:
   m_ObjectHideFlags: 1
