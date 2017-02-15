@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 //copied from: http://answers.unity3d.com/questions/441246/editor-script-to-make-play-always-jump-to-a-start.html
 
@@ -18,8 +19,8 @@ public class StartGame : MonoBehaviour {
       return;
     }
 
-    EditorApplication.SaveCurrentSceneIfUserWantsTo();
-    EditorApplication.OpenScene("Assets/Scenes/Load.unity");
+    EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    EditorSceneManager.OpenScene("Assets/Scenes/Load.unity");
     EditorApplication.isPlaying = true;
   }
 
@@ -32,7 +33,7 @@ public class StartGame : MonoBehaviour {
       return;
     }
 
-    EditorApplication.SaveCurrentSceneIfUserWantsTo();
-    EditorApplication.OpenScene("Assets/Scenes/Game.unity");
+    EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+    EditorSceneManager.OpenScene("Assets/Scenes/Game.unity");
   }
 }

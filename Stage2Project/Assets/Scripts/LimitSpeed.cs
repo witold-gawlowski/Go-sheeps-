@@ -6,7 +6,11 @@ public class LimitSpeed : MonoBehaviour
 {
   [SerializeField]
   private float MaxSpeed = 10.0f;
+
+  [SerializeField] private float speedLimitingFactor = 100.0f;
+
   private Rigidbody mBody;
+
 
   void Start()
   {
@@ -15,9 +19,10 @@ public class LimitSpeed : MonoBehaviour
 
   void Update()
   {
-    if (mBody.velocity.magnitude > MaxSpeed)
+    float excess = mBody.velocity.magnitude - MaxSpeed;
+    if (excess > 0)
     {
-      mBody.AddForce(-mBody.velocity);
+      mBody.AddForce(-mBody.velocity.normalized*excess*speedLimitingFactor);
     }
   }
 }

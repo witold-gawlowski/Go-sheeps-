@@ -26,11 +26,11 @@ GameObject:
   - component: {fileID: 114955881544127894}
   - component: {fileID: 114796538832195036}
   - component: {fileID: 114848559395199354}
-  - component: {fileID: 114664439105011670}
   - component: {fileID: 114934770552994602}
+  - component: {fileID: 114360643512573098}
   m_Layer: 0
   m_Name: BlackSheep
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 114682315256986722}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,11 +79,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4601280245422454}
   - component: {fileID: 33796225686266018}
-  - component: {fileID: 65423777831391666}
   - component: {fileID: 23819890774090860}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,18 +233,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65423777831391666
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1956515074758896}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65985002623105300
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -280,6 +267,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2ed89dd86a877459801d91414700a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114360643512573098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162436080353560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 13
+  speedLimitingFactor: 35
 --- !u!114 &114611092410105980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,21 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepelForce: 50000
+  RepelForce: 100000
   MinimumDistance: 50
   MagnetizeType: 1
---- !u!114 &114664439105011670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1162436080353560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxSpeed: 10
 --- !u!114 &114682315256986722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,6 +310,7 @@ MonoBehaviour:
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 911d9cca5e468ec4497f8323e90ee46f, type: 2}
   furGrowthDuration: 20
+  initialAffiliation: 0
 --- !u!114 &114796538832195036
 MonoBehaviour:
   m_ObjectHideFlags: 1

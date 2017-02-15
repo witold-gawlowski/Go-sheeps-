@@ -24,9 +24,9 @@ public class FurManager : MonoBehaviour
   private MeshRenderer meshRenderer;
   private Transform bodyTransform;
   private GroupTag groupTag;
-  private GroupTag.Group initialAffiliation;
+  [HideInInspector]
+  public GroupTag.Group initialAffiliation;
   private GameManager gameManager;
-
   void Awake()
   {
     meshRenderer = GetComponent<MeshRenderer>();

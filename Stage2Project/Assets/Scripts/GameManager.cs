@@ -22,18 +22,20 @@ public class GameManager : MonoBehaviour
   public float BlackSheepFraction = 0.2f;
 
   private List<GameObject> mObjects;
-  private Player mPlayer;
+  private Player[] mPlayer;
   private State mState;
   private float mNextSpawn;
   private Text moneyText;
 
   void Awake()
   {
-    mPlayer = Instantiate(PlayerPrefab);
-    mPlayer.playerID = 1;
-    mPlayer = Instantiate(PlayerPrefab);
-    mPlayer.playerID = 2;
-    mPlayer.transform.parent = transform;
+    mPlayer = new Player[2];
+    mPlayer[0] = Instantiate(PlayerPrefab);
+    mPlayer[0].playerID = 1;
+    mPlayer[1] = Instantiate(PlayerPrefab);
+    mPlayer[1].playerID = 2;
+    mPlayer[0].transform.parent = transform;
+    mPlayer[1].transform.parent = transform;
 
     ScreenManager.OnNewGame += ScreenManager_OnNewGame;
     ScreenManager.OnExitGame += ScreenManager_OnExitGame;
@@ -42,7 +44,8 @@ public class GameManager : MonoBehaviour
   void Start()
   {
     Arena.Calculate();
-    mPlayer.enabled = false;
+    mPlayer[0].enabled = false;
+    mPlayer[1].enabled = false;
     mState = State.Paused;
   }
 
@@ -79,15 +82,19 @@ public class GameManager : MonoBehaviour
       mObjects.Clear();
     }
 
-    mPlayer.transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+    mPlayer[0].transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+    mPlayer[1].transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+    mPlayer[0].enabled = true;
+    mPlayer[1].enabled = true;
     mNextSpawn = TimeBetweenSpawns;
-    mPlayer.enabled = true;
+
     mState = State.Playing;
   }
 
   private void EndGame()
   {
-    mPlayer.enabled = false;
+    mPlayer[0].enabled = false;
+    mPlayer[1].enabled = false;
     mState = State.Paused;
   }
 
