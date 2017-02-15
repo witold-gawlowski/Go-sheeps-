@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FarmPropeller : MonoBehaviour
 {
-  [SerializeField] private float farmForce = 300.0f;
+  [SerializeField] private float PropelStrength = 300.0f;
   public void OnTriggerStay(Collider other)
   {
     if (other.tag.Equals("Sheep"))
     {
-      other.GetComponentInParent<Rigidbody>().AddForce(transform.forward * farmForce);
+      other.GetComponentInParent<Rigidbody>().AddForce(transform.forward * PropelStrength);
     }
   }
 }

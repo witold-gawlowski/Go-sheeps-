@@ -4,63 +4,63 @@ using UnityEngine;
 
 public class ScreenManager : MonoBehaviour
 {
-    public delegate void GameEvent();
-    public static event GameEvent OnNewGame;
-    public static event GameEvent OnExitGame;
+  public delegate void GameEvent();
+  public static event GameEvent OnNewGame;
+  public static event GameEvent OnExitGame;
 
-    public enum Screens { TitleScreen, GameScreen, ResultScreen, NumScreens }
+  public enum Screens { TitleScreen, GameScreen, ResultScreen, NumScreens }
 
-    private Canvas [] mScreens;
-    private Screens mCurrentScreen;
+  private Canvas[] mScreens;
+  private Screens mCurrentScreen;
 
-    void Awake()
+  void Awake()
+  {
+    mScreens = new Canvas[(int)Screens.NumScreens];
+    Canvas[] screens = GetComponentsInChildren<Canvas>();
+    for (int count = 0; count < screens.Length; ++count)
     {
-        mScreens = new Canvas[(int)Screens.NumScreens];
-        Canvas[] screens = GetComponentsInChildren<Canvas>();
-        for (int count = 0; count < screens.Length; ++count)
+      for (int slot = 0; slot < mScreens.Length; ++slot)
+      {
+        if (mScreens[slot] == null && ((Screens)slot).ToString() == screens[count].name)
         {
-            for (int slot = 0; slot < mScreens.Length; ++slot)
-            {
-                if (mScreens[slot] == null && ((Screens)slot).ToString() == screens[count].name)
-                {
-                    mScreens[slot] = screens[count];
-                    break;
-                }
-            }
+          mScreens[slot] = screens[count];
+          break;
         }
-
-        for (int screen = 1; screen < mScreens.Length; ++screen)
-        {
-            mScreens[screen].enabled = false;
-        }
-
-        mCurrentScreen = Screens.TitleScreen;
+      }
     }
 
-    public void StartGame()
+    for (int screen = 1; screen < mScreens.Length; ++screen)
     {
-        if(OnNewGame != null)
-        {
-            OnNewGame();
-        }
-
-        TransitionTo(Screens.GameScreen);
+      mScreens[screen].enabled = false;
     }
 
-    public void EndGame()
-    {
-        if (OnExitGame != null)
-        {
-            OnExitGame();
-        }
+    mCurrentScreen = Screens.TitleScreen;
+  }
 
-        TransitionTo(Screens.ResultScreen);
+  public void StartGame()
+  {
+    if (OnNewGame != null)
+    {
+      OnNewGame();
     }
 
-    private void TransitionTo(Screens screen)
+    TransitionTo(Screens.GameScreen);
+  }
+
+  public void EndGame()
+  {
+    if (OnExitGame != null)
     {
-        mScreens[(int)mCurrentScreen].enabled = false;
-        mScreens[(int)screen].enabled = true;
-        mCurrentScreen = screen;
+      OnExitGame();
     }
+
+    TransitionTo(Screens.ResultScreen);
+  }
+
+  private void TransitionTo(Screens screen)
+  {
+    mScreens[(int)mCurrentScreen].enabled = false;
+    mScreens[(int)screen].enabled = true;
+    mCurrentScreen = screen;
+  }
 }

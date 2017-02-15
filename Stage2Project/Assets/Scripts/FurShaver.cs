@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class FurShaver : MonoBehaviour
 {
   [SerializeField]
-  private float farmForce = 400.0f;
-
-  [SerializeField]
   private GroupTag.Group farmType = GroupTag.Group.Black;
 
   [SerializeField]
   private SpriteRenderer farmTypeImage;
 
-void OnValidate()
+  public static int BallsOfYarn { get; private set; }
+
+  void OnValidate()
   {
     if (!farmTypeImage)
     {
@@ -37,6 +36,8 @@ void OnValidate()
     if (furManager && furManager.initialAffiliation == farmType)
     {
       furManager.Shave();
+      BallsOfYarn++;
+      GameScreenManager.ChangeWool(BallsOfYarn);
     }
   }
 

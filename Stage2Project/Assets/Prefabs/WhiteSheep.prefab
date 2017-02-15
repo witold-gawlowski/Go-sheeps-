@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 10
-  speedLimitingFactor: 40
+  speedLimitingFactor: 13
 --- !u!114 &114724683158717006
 MonoBehaviour:
   m_ObjectHideFlags: 1
