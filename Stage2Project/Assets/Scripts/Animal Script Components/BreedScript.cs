@@ -29,16 +29,13 @@ public class BreedScript : MonoBehaviour
 
   IEnumerator GrowCoroutine()
   {
-    transform.parent.localScale = Vector3.zero;
+    transform.localScale = Vector3.zero;
     float counter = 0;
     while (counter < GrowDuration)
     {
       counter += Time.deltaTime;
-      //this check is needed because sometimes deltatime gets insanely large.
-      if (counter < GrowDuration)
-      {
-        transform.parent.localScale = Vector3.one * counter / GrowDuration;
-      }
+      transform.localScale = Vector3.one * counter / GrowDuration;
+
       yield return null;
     }
     GetComponent<HealthScript>().SetHealth(4);

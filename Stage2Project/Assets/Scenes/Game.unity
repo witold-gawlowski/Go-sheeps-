@@ -1367,6 +1367,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114391914755129174, guid: 3969d2d17ad36434d8a65026ee66486b,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114391914755129174, guid: 3969d2d17ad36434d8a65026ee66486b,
+        type: 2}
+      propertyPath: separationCoefficient
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3969d2d17ad36434d8a65026ee66486b, type: 2}
   m_IsPrefabParent: 0

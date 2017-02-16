@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(FlockWithGroup))]
-[RequireComponent(typeof(GroupTag))]
 public class ShepherdScript : MonoBehaviour
 {
   public float StayDuration = 10.0f;

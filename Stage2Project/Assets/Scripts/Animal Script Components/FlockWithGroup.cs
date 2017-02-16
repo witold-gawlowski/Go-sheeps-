@@ -105,7 +105,7 @@ public class FlockWithGroup : MonoBehaviour
       {
         if (mCurrentBuddies[count] == null)
         {
-          return;
+          break;
         }
         Rigidbody body = mCurrentBuddies[count].GetComponent<Rigidbody>();
         Vector3 buddyToThis = WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
@@ -152,7 +152,6 @@ public class FlockWithGroup : MonoBehaviour
         avoid * avoidCoefficient +
         separation * separationCoefficient
         ) * Time.deltaTime);
-      
     }
    
   }
