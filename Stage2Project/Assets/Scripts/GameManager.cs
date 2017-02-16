@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     Arena.Calculate();
     mPlayer[0].enabled = false;
     mPlayer[1].enabled = false;
+    mPlayer[0].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs1;
+    mPlayer[1].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs2;
     mState = State.Paused;
   }
 

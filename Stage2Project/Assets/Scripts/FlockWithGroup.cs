@@ -27,6 +27,9 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private float forwardDrive = 80.0f;
 
+  [SerializeField]
+  private bool cohesionForceProportionalToDistance = true;
+
   private List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
   private float mCountDownToCheck;
@@ -127,6 +130,10 @@ public class FlockWithGroup : MonoBehaviour
         //avoid /= avoidCount;
       }
       cohesion /= mCurrentBuddies.Count;
+      if (!cohesionForceProportionalToDistance)
+      {
+        cohesion = cohesion.normalized;
+      }
       //Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
       //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);

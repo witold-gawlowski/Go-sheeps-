@@ -316,7 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824cde7afce24c468ee05e1cf360065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
   GroupCode: 0
 --- !u!114 &114506816992003388
 MonoBehaviour:
@@ -364,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepelForce: 60000
+  ForceCoefficient: 100000
   MinimumDistance: 30
   MagnetizeType: 1
 --- !u!212 &212875235037473174

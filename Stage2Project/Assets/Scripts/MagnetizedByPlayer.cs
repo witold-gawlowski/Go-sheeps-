@@ -8,7 +8,7 @@ public class MagnetizedByPlayer : MonoBehaviour
   public enum Type { Attract, Repel }
 
   [SerializeField]
-  private float RepelForce = 1000.0f;
+  private float ForceCoefficient = 1000.0f;
 
   [SerializeField]
   private float MinimumDistance = 1.0f;
@@ -19,7 +19,7 @@ public class MagnetizedByPlayer : MonoBehaviour
   private Player[] mPlayers;
   private Rigidbody mBody;
 
-  void Awake()
+  void Start()
   {
     mPlayers = FindObjectsOfType<Player>();
     mBody = GetComponent<Rigidbody>();
@@ -31,9 +31,17 @@ public class MagnetizedByPlayer : MonoBehaviour
     {
       Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayers[i].transform.position);
       float mag = playerToBoid.magnitude;
-      if (playerToBoid.magnitude <= MinimumDistance)
+      if (mag <= MinimumDistance)
       {
-        mBody.AddForce((MagnetizeType == Type.Repel ? 1 : -1)*playerToBoid.normalized *1/mag* RepelForce * Time.deltaTime);
+        if (MagnetizeType == Type.Repel)
+        {
+          mBody.AddForce(playerToBoid.normalized / mag * ForceCoefficient * Time.deltaTime);
+        }
+        else
+        {
+          mBody.AddForce(-playerToBoid.normalized * ForceCoefficient * Time.deltaTime);
+        }
+       
       }
     }
   }
