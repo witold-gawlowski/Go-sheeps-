@@ -367,9 +367,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breedChance: 0.000001
+  breedChancePerFrame: 0.00005
   GrowDuration: 15
-  sheep: {fileID: 1413409648508210}
+  sheepPrefab: {fileID: 1413409648508210}
+  stopBreedingBuddyCount: 5
 --- !u!212 &212875235037473174
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -11,15 +11,20 @@ public class BreedScript : MonoBehaviour
   private float GrowDuration = 15.0f;
 
   [SerializeField]
-  private GameObject sheep;
+  private GameObject sheepPrefab;
+
+  [SerializeField]
+  private int stopBreedingBuddyCount;
 
   private FlockWithGroup flockScript;
   private GameManager gameManager;
+  private GroupTag groupTag;
   
   void Start()
   {
     flockScript = GetComponent<FlockWithGroup>();
     gameManager = FindObjectOfType<GameManager>();
+    groupTag = GetComponent<GroupTag>();
   }
 
   IEnumerator GrowCoroutine()
@@ -39,15 +44,27 @@ public class BreedScript : MonoBehaviour
     StartCoroutine(GrowCoroutine());
   }
 
-  void Update()
+  void Breed()
   {
+    if (groupTag.Affiliation == GroupTag.Group.Shaved)
+    {
+      return;
+    }
+    if (flockScript.GetBuddyCount() > stopBreedingBuddyCount)
+    {
+      return;
+    }
     float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {
-      GameObject spawnedSheep = Instantiate(sheep, transform.position, Quaternion.identity);
+      GameObject spawnedSheep = Instantiate(sheepPrefab, transform.position, Quaternion.identity);
       spawnedSheep.transform.parent = gameManager.transform;
       spawnedSheep.GetComponent<BreedScript>().Grow();
     }
-   
+  }
+
+  void Update()
+  {
+    Breed();
   }
 }

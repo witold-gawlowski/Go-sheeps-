@@ -34,6 +34,7 @@ public class FurManager : MonoBehaviour
     initialAffiliation = groupTag.Affiliation;
     if (groupTag.Affiliation == GroupTag.Group.Shaved)
     {
+      print(gameObject.transform.parent.name);
       throw new Exception("Sheep can't be shaved from the start.");
     }
   }
