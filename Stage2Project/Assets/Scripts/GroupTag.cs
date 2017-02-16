@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GroupTag : MonoBehaviour
 {
-  public enum Group { White, Black, Shaved}
-
-  public Material[] materials;
+  public enum Group { White, Black, Shaved, Dogs1, Dogs2, Dogs3, Dogs4, Dogs5}
 
   [SerializeField]
   private Group GroupCode;
