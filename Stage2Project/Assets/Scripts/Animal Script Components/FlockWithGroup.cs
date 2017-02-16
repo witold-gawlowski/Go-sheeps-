@@ -103,6 +103,10 @@ public class FlockWithGroup : MonoBehaviour
 
       for (int count = 0; count < mCurrentBuddies.Count; ++count)
       {
+        if (mCurrentBuddies[count] == null)
+        {
+          return;
+        }
         Rigidbody body = mCurrentBuddies[count].GetComponent<Rigidbody>();
         Vector3 buddyToThis = WrapPosition.WrapDifference(mCurrentBuddies[count].transform.position,
           transform.position);

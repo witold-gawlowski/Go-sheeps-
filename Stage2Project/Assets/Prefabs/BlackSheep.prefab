@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114934770552994602}
   - component: {fileID: 114360643512573098}
   - component: {fileID: 114665008357904544}
+  - component: {fileID: 114984725727161362}
   m_Layer: 0
   m_Name: BlackSheep
   m_TagString: Sheep
@@ -225,7 +226,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -280,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceCoefficient: 1000
+  ForceCoefficient: 300000
   MinimumDistance: 30
   MagnetizeType: 1
 --- !u!114 &114665008357904544
@@ -294,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breedChancePerFrame: 0.0003
+  breedChancePerFrame: 0.00025
   GrowDuration: 15
   sheepPrefab: {fileID: 1162436080353560}
   stopBreedingBuddyCount: 5
@@ -314,7 +315,7 @@ MonoBehaviour:
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 911d9cca5e468ec4497f8323e90ee46f, type: 2}
   furGrowthDuration: 20
-  initialAffiliation: 0
+  furColor: 0
 --- !u!114 &114796538832195036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +372,18 @@ MonoBehaviour:
   separationCoefficient: 10000
   forwardDrive: 70
   cohesionForceProportionalToDistance: 1
+--- !u!114 &114984725727161362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162436080353560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df20a66703e7e08448a1cd80f43dc001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!212 &212285496020193396
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114665093574140074}
   - component: {fileID: 114216818568331172}
   - component: {fileID: 114883989425056836}
+  - component: {fileID: 114247230300248596}
   m_Layer: 0
   m_Name: WhiteSheep
   m_TagString: Sheep
@@ -289,6 +290,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d597e2e5e4106643aae9cd0d3d2c84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114247230300248596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413409648508210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df20a66703e7e08448a1cd80f43dc001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!114 &114272697153091040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,7 +318,7 @@ MonoBehaviour:
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
   furGrowthDuration: 20
-  initialAffiliation: 0
+  furColor: 0
 --- !u!114 &114358815225865436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceCoefficient: 100000
+  ForceCoefficient: 300000
   MinimumDistance: 30
   MagnetizeType: 1
 --- !u!114 &114883989425056836

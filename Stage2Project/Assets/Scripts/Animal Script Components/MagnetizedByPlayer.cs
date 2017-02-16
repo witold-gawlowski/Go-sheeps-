@@ -35,7 +35,7 @@ public class MagnetizedByPlayer : MonoBehaviour
       {
         if (MagnetizeType == Type.Repel)
         {
-          mBody.AddForce(playerToBoid.normalized / mag * ForceCoefficient * Time.deltaTime);
+          mBody.AddForce(playerToBoid.normalized / mag/mag * ForceCoefficient * Time.deltaTime);
         }
         else
         {

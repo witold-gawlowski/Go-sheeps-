@@ -29,14 +29,19 @@ public class BreedScript : MonoBehaviour
 
   IEnumerator GrowCoroutine()
   {
-    transform.localScale = Vector3.zero;
+    transform.parent.localScale = Vector3.zero;
     float counter = 0;
     while (counter < GrowDuration)
     {
       counter += Time.deltaTime;
-      transform.localScale = Vector3.one * counter / GrowDuration;
+      //this check is needed because sometimes deltatime gets insanely large.
+      if (counter < GrowDuration)
+      {
+        transform.parent.localScale = Vector3.one * counter / GrowDuration;
+      }
       yield return null;
     }
+    GetComponent<HealthScript>().SetHealth(4);
   }
 
   void Grow()
@@ -58,6 +63,7 @@ public class BreedScript : MonoBehaviour
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {
       GameObject spawnedSheep = Instantiate(sheepPrefab, transform.position, Quaternion.identity);
+      spawnedSheep.GetComponent<HealthScript>().SetHealth(1);
       spawnedSheep.transform.parent = gameManager.transform;
       spawnedSheep.GetComponent<BreedScript>().Grow();
     }

@@ -25,29 +25,35 @@ public class FurManager : MonoBehaviour
   private MeshRenderer meshRenderer;
   private Transform bodyTransform;
   private GroupTag groupTag;
+  private HealthScript healthScript;
+  
   [HideInInspector]
-  public GroupTag.Group initialAffiliation;
+  public GroupTag.Group furColor;
   void Awake()
   {
     meshRenderer = GetComponent<MeshRenderer>();
     groupTag = GetComponentInParent<GroupTag>();
-    initialAffiliation = groupTag.Affiliation;
+    furColor = groupTag.Affiliation;
     if (groupTag.Affiliation == GroupTag.Group.Shaved)
     {
-      print(gameObject.transform.parent.name);
       throw new Exception("Sheep can't be shaved from the start.");
     }
   }
 
+  void Start()
+  {
+    healthScript = GetComponentInParent<HealthScript>();
+  }
 
   public void Shave()
   {
+    healthScript.LooseHealth();
     if (furState == 0)
     {
       return;
     }
     meshRenderer.material = shavedMaterial;
-    transform.localScale = new Vector3(shavedBellySize, shavedBellySize, 1);
+    transform.parent.localScale = new Vector3(shavedBellySize, shavedBellySize, 1);
     furState = 0;
     groupTag.Affiliation = GroupTag.Group.Shaved;
     Invoke("Grow", furGrowthDuration);
@@ -60,9 +66,9 @@ public class FurManager : MonoBehaviour
       return;
     }
     meshRenderer.material = fullHairMaterial;
-    transform.localScale = new Vector3(grownFurWidth, grownFurWidth, 1);
+    transform.parent.localScale = new Vector3(grownFurWidth, grownFurWidth, 1);
     furState = 1;
-    groupTag.Affiliation = initialAffiliation;
+    groupTag.Affiliation = furColor;
   }
 
 }

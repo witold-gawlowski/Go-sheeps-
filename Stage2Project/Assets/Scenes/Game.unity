@@ -130,7 +130,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &38977677
@@ -936,6 +937,26 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: d94a568db4bc13d4c8e9d4bb90f4baf4,
         type: 2}
+    - target: {fileID: 114881757009781640, guid: 70d9258e43792434aa5f3724f608cf40,
+        type: 2}
+      propertyPath: farmType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
   m_IsPrefabParent: 0

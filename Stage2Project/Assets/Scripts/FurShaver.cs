@@ -33,7 +33,7 @@ public class FurShaver : MonoBehaviour
   public void OnTriggerEnter(Collider other)
   {
     FurManager furManager = other.GetComponent<FurManager>();
-    if (furManager && furManager.initialAffiliation == farmType)
+    if (furManager && furManager.furColor == farmType)
     {
       furManager.Shave();
       BallsOfYarn++;
