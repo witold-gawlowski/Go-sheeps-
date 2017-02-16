@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
   void Update()
   {
+    /* I now spawn boids in BreedScript.
     if (mState == State.Playing)
     {
       mNextSpawn -= Time.deltaTime;
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         mNextSpawn = TimeBetweenSpawns;
       }
     }
+    */
   }
 
   private void BeginNewGame()

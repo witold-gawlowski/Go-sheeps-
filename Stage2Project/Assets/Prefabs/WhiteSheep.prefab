@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33493407610904744}
   - component: {fileID: 23860397758094986}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Head
   m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4912416917475644}
   - component: {fileID: 54908489545348444}
-  - component: {fileID: 114724683158717006}
   - component: {fileID: 114830255223270324}
   - component: {fileID: 114230769551075054}
   - component: {fileID: 114198163187294780}
@@ -45,6 +44,7 @@ GameObject:
   - component: {fileID: 114506816992003388}
   - component: {fileID: 114665093574140074}
   - component: {fileID: 114216818568331172}
+  - component: {fileID: 114883989425056836}
   m_Layer: 0
   m_Name: WhiteSheep
   m_TagString: Sheep
@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117173195133182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.415}
+  m_LocalPosition: {x: 0, y: 0, z: 0.898}
   m_LocalScale: {x: 0.575776, y: 0.48680836, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4912416917475644}
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 1865692291735930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 0.85, z: 1.72}
   m_Children: []
   m_Father: {fileID: 4912416917475644}
   m_RootOrder: 2
@@ -133,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413409648508210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.990824, y: 7.61, z: 5.8000226}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 2}
+  m_LocalPosition: {x: -3.160721, y: 1.46, z: 12.629833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4491562064705534}
   - {fileID: 4083348853016676}
@@ -264,6 +264,7 @@ MonoBehaviour:
   allignCoefficient: 800
   separationCoefficient: 10000
   forwardDrive: 70
+  cohesionForceProportionalToDistance: 1
 --- !u!114 &114216818568331172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,17 +342,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 10
   speedLimitingFactor: 13
---- !u!114 &114724683158717006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413409648508210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2ed89dd86a877459801d91414700a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114830255223270324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,6 +356,20 @@ MonoBehaviour:
   ForceCoefficient: 100000
   MinimumDistance: 30
   MagnetizeType: 1
+--- !u!114 &114883989425056836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413409648508210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breedChance: 0.000001
+  GrowDuration: 15
+  sheep: {fileID: 1413409648508210}
 --- !u!212 &212875235037473174
 SpriteRenderer:
   m_ObjectHideFlags: 1

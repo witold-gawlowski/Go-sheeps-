@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4496068166659228}
   - component: {fileID: 54213773289397510}
-  - component: {fileID: 114130876070658270}
   - component: {fileID: 114611092410105980}
   - component: {fileID: 114072596302714364}
   - component: {fileID: 114955881544127894}
@@ -28,6 +27,7 @@ GameObject:
   - component: {fileID: 114848559395199354}
   - component: {fileID: 114934770552994602}
   - component: {fileID: 114360643512573098}
+  - component: {fileID: 114665008357904544}
   m_Layer: 0
   m_Name: BlackSheep
   m_TagString: Sheep
@@ -95,7 +95,7 @@ Transform:
   m_GameObject: {fileID: 1540057627682130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1.58}
   m_Children: []
   m_Father: {fileID: 4496068166659228}
   m_RootOrder: 2
@@ -120,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.7, y: 24.07, z: -5.84}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 2.5}
+  m_LocalPosition: {x: -13.259391, y: 3.22, z: 11.480194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4601280245422454}
   - {fileID: 4458585293796970}
@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956515074758896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.121, z: 0.415}
+  m_LocalPosition: {x: 0, y: 0.121, z: 0.81}
   m_LocalScale: {x: 0.58, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4496068166659228}
@@ -256,17 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d597e2e5e4106643aae9cd0d3d2c84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114130876070658270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1162436080353560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2ed89dd86a877459801d91414700a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114360643512573098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,9 +280,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c82e983c28a30459872058c15ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepelForce: 60000
+  ForceCoefficient: 1000
   MinimumDistance: 30
   MagnetizeType: 1
+--- !u!114 &114665008357904544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162436080353560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breedChance: 0.001
+  GrowDuration: 15
+  sheep: {fileID: 1162436080353560}
 --- !u!114 &114682315256986722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,7 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824cde7afce24c468ee05e1cf360065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
   GroupCode: 1
 --- !u!114 &114848559395199354
 MonoBehaviour:
@@ -367,6 +369,7 @@ MonoBehaviour:
   allignCoefficient: 800
   separationCoefficient: 10000
   forwardDrive: 70
+  cohesionForceProportionalToDistance: 1
 --- !u!212 &212285496020193396
 SpriteRenderer:
   m_ObjectHideFlags: 1

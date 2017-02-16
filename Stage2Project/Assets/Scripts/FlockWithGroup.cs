@@ -56,6 +56,11 @@ public class FlockWithGroup : MonoBehaviour
     mBody.AddForce(transform.forward*forwardDrive);
   }
 
+  public int GetBuddyCount()
+  {
+    return mCurrentBuddies.Count;
+  }
+
   private void UpdateBuddyList()
   {
     GroupTag[] individuals = FindObjectsOfType<GroupTag>();
