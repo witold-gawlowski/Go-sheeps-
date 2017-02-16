@@ -9,12 +9,15 @@ public class Player : MonoBehaviour
   private float Speed;
 
   private Rigidbody mBody;
+  private DogPackManager packManager;
 
   public int playerID = 1;
   private string horiAxisName;
   private string vertAxisName;
   private string altHoriAxisName;
   private string altVertAxisName;
+  private string stayButtonName;
+  private string stayAltButtonName;
 
 
   void Start()
@@ -23,11 +26,15 @@ public class Player : MonoBehaviour
     vertAxisName = "c" + playerID.ToString() + "_Vertical";
     altHoriAxisName = "c" + playerID.ToString() + "_Alt_Horizontal";
     altVertAxisName = "c" + playerID.ToString() + "_Alt_Vertical";
+
+    stayButtonName = "c" + playerID.ToString() + "_Stay";
+    stayAltButtonName = "c" + playerID.ToString() + "_Alt_Stay";
   }
 
   void Awake()
   {
     mBody = GetComponent<Rigidbody>();
+    packManager = GetComponent<DogPackManager>();
   }
 
   void Update()
@@ -50,6 +57,10 @@ public class Player : MonoBehaviour
     else if (Mathf.Abs(Input.GetAxis(altVertAxisName)) > 0.2f)
     {
       direction += Vector3.forward * Input.GetAxis(altVertAxisName);
+    }
+
+    if (Input.GetButtonDown(stayButtonName) || Input.GetButtonDown(stayAltButtonName)) { 
+       packManager.SetGuard();
     }
 
 

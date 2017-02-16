@@ -18,7 +18,8 @@ public class FurManager : MonoBehaviour
   [SerializeField]
   private Material fullHairMaterial;
 
-  [SerializeField] private float furGrowthDuration = 4.0f;
+  [SerializeField]
+  private float furGrowthDuration = 4.0f;
 
   private int furState = 1;
   private MeshRenderer meshRenderer;
@@ -26,7 +27,6 @@ public class FurManager : MonoBehaviour
   private GroupTag groupTag;
   [HideInInspector]
   public GroupTag.Group initialAffiliation;
-  private GameManager gameManager;
   void Awake()
   {
     meshRenderer = GetComponent<MeshRenderer>();
@@ -38,10 +38,6 @@ public class FurManager : MonoBehaviour
     }
   }
 
-  void Start()
-  {
-    gameManager = FindObjectOfType<GameManager>();
-  }
 
   public void Shave()
   {
@@ -52,7 +48,7 @@ public class FurManager : MonoBehaviour
     meshRenderer.material = shavedMaterial;
     transform.localScale = new Vector3(shavedBellySize, shavedBellySize, 1);
     furState = 0;
-    groupTag.Affiliation  = GroupTag.Group.Shaved;
+    groupTag.Affiliation = GroupTag.Group.Shaved;
     Invoke("Grow", furGrowthDuration);
   }
 
