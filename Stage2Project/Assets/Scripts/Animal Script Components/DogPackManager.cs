@@ -17,7 +17,7 @@ public class DogPackManager : MonoBehaviour
   void Start()
   {
     Affiliation = GetComponent<GroupTag>().Affiliation;
-   UpdateShepards();
+    UpdateShepards();
   }
 
   public int GetPackSize()
@@ -38,10 +38,12 @@ public class DogPackManager : MonoBehaviour
     if (CurrentShop && FurShaver.BallsOfYarn >= CurrentShop.GetPrice())
     {
       FurShaver.BallsOfYarn -= CurrentShop.GetPrice();
-      GameObject shepard = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
-      GroupTag groupTag = shepard.GetComponent<GroupTag>();
+      GameObject shepardObject = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
+      GroupTag groupTag = shepardObject.GetComponent<GroupTag>();
       groupTag.Affiliation = Affiliation;
-      shepards.Add(shepard.GetComponent<ShepherdScript>());
+      ShepherdScript shepardScript = shepardObject.GetComponent<ShepherdScript>();
+      shepards.Add(shepardScript);
+      MagnetizedByPlayer.RegisterShepard(shepardScript.gameObject);
       CurrentShop.UpdateGUI();
     }
   }

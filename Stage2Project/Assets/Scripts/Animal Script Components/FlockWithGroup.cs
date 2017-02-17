@@ -34,6 +34,7 @@ public class FlockWithGroup : MonoBehaviour
   private Rigidbody mBody;
   private float mCountDownToCheck;
   private GroupTag groupTag;
+  private int cohesionCount;
 
   void Awake()
   {
@@ -100,6 +101,7 @@ public class FlockWithGroup : MonoBehaviour
       Vector3 separation = Vector3.zero;
 
       int avoidCount = 0;
+      cohesionCount = 0;
 
       for (int count = 0; count < mCurrentBuddies.Count; ++count)
       {
@@ -115,7 +117,7 @@ public class FlockWithGroup : MonoBehaviour
         {
           align += body.velocity;
           cohesion += buddyToThis;
-
+          cohesionCount++;
           if (mag < AvoidDistance)
           {
             avoidCount++;
@@ -138,15 +140,23 @@ public class FlockWithGroup : MonoBehaviour
       {
         //avoid /= avoidCount;
       }
-      cohesion /= mCurrentBuddies.Count;
+      if (cohesionCount != 0)
+      {
+        cohesion /= cohesionCount;
+      }
       if (!cohesionForceProportionalToDistance)
       {
         cohesion = cohesion.normalized;
       }
+      //if (gameObject.name == "Shepherd")
+      //{
+      //  print("cohesion " + cohesion);
+      //  print("budides " + cohesionCount);
+      //}
       //Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
-      //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
-      //Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
+      Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
+      Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
       mBody.AddForce((align * allignCoefficient +
         cohesion * cohesionCoefficient +
         avoid * avoidCoefficient +

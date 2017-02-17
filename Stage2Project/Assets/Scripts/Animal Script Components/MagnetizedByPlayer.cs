@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -16,18 +17,23 @@ public class MagnetizedByPlayer : MonoBehaviour
   [SerializeField]
   private Type MagnetizeType = Type.Repel;
 
-  private GameObject[] mPlayers;
+  private static List<GameObject> mPlayers;
   private Rigidbody mBody;
 
   void Start()
   {
-    mPlayers = GameObject.FindGameObjectsWithTag("Player");
+    mPlayers = GameObject.FindGameObjectsWithTag("Player").ToList();
     mBody = GetComponent<Rigidbody>();
+  }
+
+  public static void RegisterShepard(GameObject shepard)
+  {
+    mPlayers.Add(shepard);
   }
 
   void Update()
   {
-    for(int i=0; i<mPlayers.Length; i++)
+    for(int i=0; i < mPlayers.Count; i++)
     {
       Vector3 playerToBoid = WrapPosition.WrapDifference(transform.position, mPlayers[i].transform.position);
       float mag = playerToBoid.magnitude;

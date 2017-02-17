@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914969696238086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.58027, y: 0.23, z: 11.375}
+  m_LocalPosition: {x: -13.325368, y: 1.17, z: -2.44}
   m_LocalScale: {x: 0.47666374, y: 1.0787643, z: 0.5413882}
   m_Children:
   - {fileID: 4026620052952490}
@@ -186,7 +186,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 5
-  m_AngularDrag: 1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -254,12 +254,12 @@ MonoBehaviour:
   BuddyDistance: 1000
   AvoidDistance: 20
   CheckForBuddiesInterval: 2
-  cohesionCoefficient: 45000
-  avoidCoefficient: 60000
-  allignCoefficient: 600
-  separationCoefficient: 4
-  forwardDrive: 1
-  cohesionForceProportionalToDistance: 0
+  cohesionCoefficient: 1500
+  avoidCoefficient: 3000
+  allignCoefficient: 1
+  separationCoefficient: 1
+  forwardDrive: 0
+  cohesionForceProportionalToDistance: 1
 --- !u!114 &114397901610192330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 1000
-  speedLimitingFactor: 13
+  MaxSpeed: 50
+  speedLimitingFactor: 100
 --- !u!114 &114627442558947722
 MonoBehaviour:
   m_ObjectHideFlags: 1

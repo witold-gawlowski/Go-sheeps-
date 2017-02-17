@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuddyDistance: 10
   AvoidDistance: 7
-  CheckForBuddiesInterval: 2
+  CheckForBuddiesInterval: 1
   cohesionCoefficient: 2000
   avoidCoefficient: 6000
   allignCoefficient: 800
