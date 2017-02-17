@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
     if (Input.GetButtonDown(buyButtonName) || Input.GetButtonDown(buyAltButtonName))
     {
-      packManager.Buy();
+      packManager.Purchase();
     }
 
     mBody.AddForce(direction * Speed * Time.deltaTime);

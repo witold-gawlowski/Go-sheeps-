@@ -26,7 +26,7 @@ public class FurManager : MonoBehaviour
   private Transform bodyTransform;
   private GroupTag groupTag;
   private HealthScript healthScript;
-  
+
   [HideInInspector]
   public GroupTag.Group furColor;
   void Awake()
@@ -40,6 +40,14 @@ public class FurManager : MonoBehaviour
     }
   }
 
+  public bool IsShaved()
+  {
+    if (furState == 0)
+    {
+      return true;
+    }
+    return false;
+  }
   void Start()
   {
     healthScript = GetComponentInParent<HealthScript>();

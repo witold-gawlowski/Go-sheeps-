@@ -11,10 +11,18 @@ public class DogPackManager : MonoBehaviour
   public List<ShepherdScript> shepards;
   public GroupTag.Group Affiliation { get; private set; }
 
+  [HideInInspector]
+  public ShepherdShop CurrentShop;
+
   void Start()
   {
     Affiliation = GetComponent<GroupTag>().Affiliation;
    UpdateShepards();
+  }
+
+  public int GetPackSize()
+  {
+    return shepards.Count;
   }
 
   public void UpdateShepards()
@@ -24,16 +32,17 @@ public class DogPackManager : MonoBehaviour
      ).ToList();
   }
 
-  public void Buy()
+  //todo: move this code to balls of yarn.
+  public void Purchase()
   {
-    print("buy");
-    if (FurShaver.BallsOfYarn > -31)
+    if (CurrentShop && FurShaver.BallsOfYarn >= CurrentShop.GetPrice())
     {
-      FurShaver.BallsOfYarn -= 30;
+      FurShaver.BallsOfYarn -= CurrentShop.GetPrice();
       GameObject shepard = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
       GroupTag groupTag = shepard.GetComponent<GroupTag>();
       groupTag.Affiliation = Affiliation;
       shepards.Add(shepard.GetComponent<ShepherdScript>());
+      CurrentShop.UpdateGUI();
     }
   }
 
