@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
   {
     Vector3 direction = Vector3.zero;
 
-    if (Mathf.Abs(Input.GetAxis(horiAxisName))>0.2f)
+    if (Mathf.Abs(Input.GetAxis(horiAxisName)) > 0.2f)
     {
       direction += Vector3.right*Input.GetAxis(horiAxisName);
     }

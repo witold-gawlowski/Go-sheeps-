@@ -8,7 +8,12 @@ public class BreedScript : MonoBehaviour
   private float breedChancePerFrame = 0.0003f;
 
   [SerializeField]
-  private float GrowDuration = 15.0f;
+  private float lambDuration = 15.0f;
+
+  [SerializeField]
+  private float growDuration = 15.0f;
+
+  [SerializeField] private float initialSize = 0.3f;
 
   [SerializeField]
   private GameObject sheepPrefab;
@@ -29,13 +34,13 @@ public class BreedScript : MonoBehaviour
 
   IEnumerator GrowCoroutine()
   {
-    transform.localScale = Vector3.zero;
+    transform.localScale = Vector3.one* initialSize;
     float counter = 0;
-    while (counter < GrowDuration)
+    yield return new WaitForSeconds(lambDuration);
+    while (counter < growDuration)
     {
       counter += Time.deltaTime;
-      transform.localScale = Vector3.one * counter / GrowDuration;
-
+      transform.localScale = Vector3.one * Mathf.Lerp(initialSize,1, counter / growDuration);
       yield return null;
     }
     GetComponent<HealthScript>().SetHealth(4);

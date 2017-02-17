@@ -381,7 +381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breedChancePerFrame: 0.00005
-  GrowDuration: 15
+  lambDuration: 25
+  growDuration: 0.4
+  initialSize: 0.5
   sheepPrefab: {fileID: 1413409648508210}
   stopBreedingBuddyCount: 5
 --- !u!212 &212875235037473174

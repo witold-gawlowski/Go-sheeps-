@@ -16,12 +16,12 @@ public class MagnetizedByPlayer : MonoBehaviour
   [SerializeField]
   private Type MagnetizeType = Type.Repel;
 
-  private Player[] mPlayers;
+  private GameObject[] mPlayers;
   private Rigidbody mBody;
 
   void Start()
   {
-    mPlayers = FindObjectsOfType<Player>();
+    mPlayers = GameObject.FindGameObjectsWithTag("Player");
     mBody = GetComponent<Rigidbody>();
   }
 
