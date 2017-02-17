@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
   private string altVertAxisName;
   private string stayButtonName;
   private string stayAltButtonName;
+  private string buyButtonName;
+  private string buyAltButtonName;
 
 
   void Start()
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour
 
     stayButtonName = "c" + playerID.ToString() + "_Stay";
     stayAltButtonName = "c" + playerID.ToString() + "_Alt_Stay";
+    buyButtonName = "c" + playerID.ToString() + "_Buy";
+    buyAltButtonName = "c" + playerID.ToString() + "_Alt_Buy";
   }
 
   void Awake()
@@ -63,6 +67,10 @@ public class Player : MonoBehaviour
        packManager.SetGuard();
     }
 
+    if (Input.GetButtonDown(buyButtonName) || Input.GetButtonDown(buyAltButtonName))
+    {
+      packManager.Buy();
+    }
 
     mBody.AddForce(direction * Speed * Time.deltaTime);
   }

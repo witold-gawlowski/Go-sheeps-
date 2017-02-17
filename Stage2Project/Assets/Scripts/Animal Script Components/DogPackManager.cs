@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class DogPackManager : MonoBehaviour
 {
-  public ShepherdScript[] shepards;
+  [SerializeField]
+  private GameObject shepardPrefab;
+  //todo: make it private
+  public List<ShepherdScript> shepards;
   public GroupTag.Group Affiliation { get; private set; }
 
   void Start()
@@ -18,12 +21,25 @@ public class DogPackManager : MonoBehaviour
   {
     shepards = FindObjectsOfType<ShepherdScript>().Where(
      item => item.InitialAffiliation == Affiliation
-     ).ToArray();
+     ).ToList();
+  }
+
+  public void Buy()
+  {
+    print("buy");
+    if (FurShaver.BallsOfYarn > -31)
+    {
+      FurShaver.BallsOfYarn -= 30;
+      GameObject shepard = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
+      GroupTag groupTag = shepard.GetComponent<GroupTag>();
+      groupTag.Affiliation = Affiliation;
+      shepards.Add(shepard.GetComponent<ShepherdScript>());
+    }
   }
 
   public void SetGuard()
   {
-    for (int i = 0; i < shepards.Length; i++)
+    for (int i = 0; i < shepards.Count; i++)
     {
       if (!shepards[i].IsOnStayCommand)
       {

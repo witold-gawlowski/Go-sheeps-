@@ -11,7 +11,15 @@ public class FurShaver : MonoBehaviour
   [SerializeField]
   private SpriteRenderer farmTypeImage;
 
-  public static int BallsOfYarn { get; private set; }
+  private static int _BallsOfYarn;
+  public static int BallsOfYarn {
+    get { return _BallsOfYarn; } 
+    set
+    {
+      _BallsOfYarn = value;
+      GameScreenManager.ChangeWool(value);
+    } 
+  }
 
   void OnValidate()
   {

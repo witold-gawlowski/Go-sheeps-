@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983ad455da258f64690bd21bec2888af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shepardPrefab: {fileID: 1914969696238086, guid: 3969d2d17ad36434d8a65026ee66486b,
+    type: 2}
   shepards: []
 --- !u!212 &212460928548576108
 SpriteRenderer:
