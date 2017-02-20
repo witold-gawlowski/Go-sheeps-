@@ -22,7 +22,7 @@ public class FurManager : MonoBehaviour
   private float furGrowthDuration = 4.0f;
 
   [SerializeField]
-  private float grassFurGrowthSpeedMultiplier = 2.0f;
+  private float grassFurGrowthSpeedMultiplier = 3.5f;
 
   private int furState = 1;
   private MeshRenderer meshRenderer;

@@ -8,7 +8,7 @@ public class BreedScript : MonoBehaviour
   private float standardBreedChancePerFrame = 0.0003f;
 
   [SerializeField]
-  private float grassBreedChangePerFrame = 0.0006f;
+  private float grassBreedChancePerFrame = 0.0015f;
 
   [SerializeField]
   private float lambDuration = 15.0f;
@@ -75,7 +75,7 @@ public class BreedScript : MonoBehaviour
     {
       return;
     }
-    float breedChancePerFrame = isOnGrass ? grassBreedChangePerFrame : standardBreedChancePerFrame;
+    float breedChancePerFrame = isOnGrass ? grassBreedChancePerFrame : standardBreedChancePerFrame;
     float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {

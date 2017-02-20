@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardBreedChancePerFrame: 0.0003
-  grassBreedChangePerFrame: 0.0006
+  grassBreedChancePerFrame: 0.0015
   lambDuration: 15
   growDuration: 0.3
   initialSize: 0.7
@@ -370,12 +370,13 @@ MonoBehaviour:
   BuddyDistance: 10
   AvoidDistance: 7
   CheckForBuddiesInterval: 1
-  cohesionCoefficient: 2000
+  cohesionCoefficient: 1000
   avoidCoefficient: 6000
   allignCoefficient: 800
   separationCoefficient: 10000
   forwardDrive: 70
   cohesionForceProportionalToDistance: 1
+  isOnGrass: 0
 --- !u!114 &114984725727161362
 MonoBehaviour:
   m_ObjectHideFlags: 1

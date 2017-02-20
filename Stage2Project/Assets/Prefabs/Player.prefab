@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7038e7bb941a78e44bc347be170e7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 6500
+  Speed: 4000
   playerID: 1
 --- !u!114 &114645908955841662
 MonoBehaviour:
@@ -236,6 +236,7 @@ MonoBehaviour:
   shepardPrefab: {fileID: 1914969696238086, guid: 3969d2d17ad36434d8a65026ee66486b,
     type: 2}
   shepards: []
+  CurrentShop: {fileID: 0}
 --- !u!212 &212460928548576108
 SpriteRenderer:
   m_ObjectHideFlags: 1
