@@ -35,6 +35,8 @@ public class FlockWithGroup : MonoBehaviour
   private float mCountDownToCheck;
   private GroupTag groupTag;
   private int cohesionCount;
+  private bool isOnGrass;
+
 
   void Awake()
   {
@@ -42,6 +44,7 @@ public class FlockWithGroup : MonoBehaviour
     mBody = GetComponent<Rigidbody>();
     mCountDownToCheck = 0.0f;
     groupTag = GetComponent<GroupTag>();
+    isOnGrass = false;
   }
 
   void Update()
@@ -54,7 +57,20 @@ public class FlockWithGroup : MonoBehaviour
     }
 
     FlockWithBuddies();
-    mBody.AddForce(transform.forward*forwardDrive);
+    if (!isOnGrass)
+    {
+      mBody.AddForce(transform.forward * forwardDrive);
+    }
+  }
+
+  public void EnterGrass()
+  {
+    isOnGrass = true;
+  }
+
+  public void ExitGrass()
+  {
+    isOnGrass = false;
   }
 
   public int GetBuddyCount()

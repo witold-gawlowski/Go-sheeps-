@@ -5,7 +5,10 @@ using UnityEngine;
 public class BreedScript : MonoBehaviour
 {
   [SerializeField]
-  private float breedChancePerFrame = 0.0003f;
+  private float standardBreedChancePerFrame = 0.0003f;
+
+  [SerializeField]
+  private float grassBreedChangePerFrame = 0.0006f;
 
   [SerializeField]
   private float lambDuration = 15.0f;
@@ -24,6 +27,7 @@ public class BreedScript : MonoBehaviour
   private FlockWithGroup flockScript;
   private GameManager gameManager;
   private GroupTag groupTag;
+  private bool isOnGrass;
   
   void Start()
   {
@@ -46,6 +50,16 @@ public class BreedScript : MonoBehaviour
     GetComponent<HealthScript>().SetHealth(4);
   }
 
+  public void EnterGrass()
+  {
+    isOnGrass = true;
+  }
+
+  public void ExitGrass()
+  {
+    isOnGrass = false;
+  }
+
   void Grow()
   {
     StartCoroutine(GrowCoroutine());
@@ -61,6 +75,7 @@ public class BreedScript : MonoBehaviour
     {
       return;
     }
+    float breedChancePerFrame = isOnGrass ? grassBreedChangePerFrame : standardBreedChancePerFrame;
     float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {

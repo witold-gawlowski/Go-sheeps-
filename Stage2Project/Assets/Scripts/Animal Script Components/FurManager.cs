@@ -21,11 +21,15 @@ public class FurManager : MonoBehaviour
   [SerializeField]
   private float furGrowthDuration = 4.0f;
 
+  [SerializeField]
+  private float grassFurGrowthSpeedMultiplier = 2.0f;
+
   private int furState = 1;
   private MeshRenderer meshRenderer;
   private Transform bodyTransform;
   private GroupTag groupTag;
   private HealthScript healthScript;
+  private bool isOnGrass;
 
   [HideInInspector]
   public GroupTag.Group furColor;
@@ -53,6 +57,16 @@ public class FurManager : MonoBehaviour
     healthScript = GetComponentInParent<HealthScript>();
   }
 
+  public void EnterGrass()
+  {
+    isOnGrass = true;
+  }
+
+  public void ExitGrass()
+  {
+    isOnGrass = false;
+  }
+
   public void Shave()
   {
     healthScript.LooseHealth();
@@ -64,7 +78,18 @@ public class FurManager : MonoBehaviour
     transform.parent.localScale = new Vector3(shavedBellySize, shavedBellySize, 1);
     furState = 0;
     groupTag.Affiliation = GroupTag.Group.Shaved;
-    Invoke("Grow", furGrowthDuration);
+    StartCoroutine(GrowCoroutine());
+  }
+
+  private IEnumerator GrowCoroutine()
+  {
+    float counter = furGrowthDuration;
+    while (counter > 0)
+    {
+      counter -= Time.deltaTime * (isOnGrass  ? grassFurGrowthSpeedMultiplier : 1.0f);
+      yield return null;
+    }
+    Grow();
   }
 
   public void Grow()
