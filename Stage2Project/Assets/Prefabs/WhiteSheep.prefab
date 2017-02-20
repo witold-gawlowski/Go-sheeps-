@@ -262,10 +262,11 @@ MonoBehaviour:
   CheckForBuddiesInterval: 1
   cohesionCoefficient: 1000
   avoidCoefficient: 6000
-  allignCoefficient: 800
+  allignCoefficient: 1200
   separationCoefficient: 10000
   forwardDrive: 70
   cohesionForceProportionalToDistance: 1
+  isOnGrass: 0
 --- !u!114 &114216818568331172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,8 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4612fbfcedd81489af538e52625def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 0.11
-  minimumVelocity: 7
+  turnSpeed: 0.07
+  minimumVelocity: 0.85
 --- !u!114 &114230769551075054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 10
+  MaxSpeed: 1
   speedLimitingFactor: 13
 --- !u!114 &114830255223270324
 MonoBehaviour:
@@ -381,8 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardBreedChancePerFrame: 0.0003
-  grassBreedChangePerFrame: 0.0006
+  standardBreedChancePerFrame: 0.00003
+  grassBreedChancePerFrame: 0.0005
   lambDuration: 25
   growDuration: 0.4
   initialSize: 0.5
