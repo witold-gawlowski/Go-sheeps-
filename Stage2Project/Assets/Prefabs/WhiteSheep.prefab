@@ -227,8 +227,8 @@ Rigidbody:
   m_GameObject: {fileID: 1413409648508210}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2
-  m_AngularDrag: 0.05
+  m_Drag: 3
+  m_AngularDrag: 0.07
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
   furGrowthDuration: 20
+  grassFurGrowthSpeedMultiplier: 2
   furColor: 0
 --- !u!114 &114358815225865436
 MonoBehaviour:
@@ -380,7 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breedChancePerFrame: 0.00005
+  standardBreedChancePerFrame: 0.0003
+  grassBreedChangePerFrame: 0.0006
   lambDuration: 25
   growDuration: 0.4
   initialSize: 0.5

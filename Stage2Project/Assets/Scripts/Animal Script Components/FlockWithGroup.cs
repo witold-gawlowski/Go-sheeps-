@@ -35,7 +35,7 @@ public class FlockWithGroup : MonoBehaviour
   private float mCountDownToCheck;
   private GroupTag groupTag;
   private int cohesionCount;
-  private bool isOnGrass;
+  public bool isOnGrass;
 
 
   void Awake()
