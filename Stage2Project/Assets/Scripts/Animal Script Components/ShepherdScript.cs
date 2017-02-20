@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShepherdScript : MonoBehaviour
 {
-  public float StayDuration = 10.0f;
+  public float StayDuration = 30.0f;
   public bool IsOnStayCommand { get; set; }
   private GroupTag groupTag;
   public GroupTag.Group InitialAffiliation { get; private set; }
@@ -41,5 +41,12 @@ public class ShepherdScript : MonoBehaviour
   public void Stay()
   {
     StartCoroutine(StayCoroutine());
+  }
+
+  public void Summon()
+  {
+    IsOnStayCommand = false;
+    flockWithGroup.enabled = true;
+    groupTag.Affiliation = InitialAffiliation;
   }
 }

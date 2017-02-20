@@ -48,6 +48,18 @@ public class DogPackManager : MonoBehaviour
     }
   }
 
+  public void Summon()
+  {
+    for (int i = 0; i < shepards.Count; i++)
+    {
+      if (shepards[i].IsOnStayCommand)
+      {
+        shepards[i].Summon();
+        break;
+      }
+    }
+  }
+
   public void SetGuard()
   {
     for (int i = 0; i < shepards.Count; i++)

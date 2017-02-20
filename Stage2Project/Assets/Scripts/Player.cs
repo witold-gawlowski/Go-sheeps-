@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
   private string stayAltButtonName;
   private string buyButtonName;
   private string buyAltButtonName;
+  private string summonButtonName;
+  private string summonAltButtonName;
+
 
 
   void Start()
@@ -33,6 +36,8 @@ public class Player : MonoBehaviour
     stayAltButtonName = "c" + playerID.ToString() + "_Alt_Stay";
     buyButtonName = "c" + playerID.ToString() + "_Buy";
     buyAltButtonName = "c" + playerID.ToString() + "_Alt_Buy";
+    summonButtonName = "c" + playerID.ToString() + "_Summon";
+    summonAltButtonName = "c" + playerID.ToString() + "_Alt_Summon";
   }
 
   void Awake()
@@ -70,6 +75,11 @@ public class Player : MonoBehaviour
     if (Input.GetButtonDown(buyButtonName) || Input.GetButtonDown(buyAltButtonName))
     {
       packManager.Purchase();
+    }
+
+    if (Input.GetButtonDown(summonButtonName) || Input.GetButtonDown(summonAltButtonName))
+    {
+      packManager.Summon();
     }
 
     mBody.AddForce(direction * Speed * Time.deltaTime);

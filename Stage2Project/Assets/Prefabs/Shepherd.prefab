@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd8d188f9094b540be0f754a55553a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StayDuration: 10
+  StayDuration: 30
 --- !u!114 &114215017594770702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +260,7 @@ MonoBehaviour:
   separationCoefficient: 1
   forwardDrive: 0
   cohesionForceProportionalToDistance: 1
+  isOnGrass: 0
 --- !u!114 &114397901610192330
 MonoBehaviour:
   m_ObjectHideFlags: 1
