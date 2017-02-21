@@ -14,7 +14,8 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private float CheckForBuddiesInterval = 10.0f;
 
-  [SerializeField] private float cohesionCoefficient = 0.1f;
+  [SerializeField]
+  private float cohesionCoefficient = 0.1f;
 
   [SerializeField]
   private float avoidCoefficient = 0.07f;
@@ -22,7 +23,8 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private float allignCoefficient = 0.4f;
 
-  [SerializeField] private float separationCoefficient = 200.0f;
+  [SerializeField]
+  private float separationCoefficient = 200.0f;
 
   [SerializeField]
   private float forwardDrive = 80.0f;
@@ -71,6 +73,11 @@ public class FlockWithGroup : MonoBehaviour
   public void ExitGrass()
   {
     isOnGrass = false;
+  }
+
+  public int GetColorBuddyCount()
+  {
+    return cohesionCount;
   }
 
   public int GetBuddyCount()

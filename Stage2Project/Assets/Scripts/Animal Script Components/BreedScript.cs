@@ -19,7 +19,10 @@ public class BreedScript : MonoBehaviour
   [SerializeField] private float initialSize = 0.3f;
 
   [SerializeField]
-  private int stopBreedingBuddyCount;
+  private int maxBreedingBuddyCount = 6;
+
+  [SerializeField]
+  private int minBreedingBuddyCount = 2; // ;)
 
   private FlockWithGroup flockScript;
   private GameManager gameManager;
@@ -68,12 +71,12 @@ public class BreedScript : MonoBehaviour
     {
       return;
     }
-    if (flockScript.GetBuddyCount() > stopBreedingBuddyCount)
+    if (flockScript.GetColorBuddyCount() > maxBreedingBuddyCount || flockScript.GetBuddyCount() < minBreedingBuddyCount)
     {
       return;
     }
     float breedChancePerFrame = isOnGrass ? grassBreedChancePerFrame : standardBreedChancePerFrame;
-    float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
+    float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetColorBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {
       GameObject spawnedSheep = Instantiate(this.gameObject, transform.position, Quaternion.identity);
