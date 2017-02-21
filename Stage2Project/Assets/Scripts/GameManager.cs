@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour
       mObjects.Clear();
     }
 
-    mPlayer[0].transform.position = new Vector3(0.0f, 1.5f, 0.0f);
-    mPlayer[1].transform.position = new Vector3(0.0f, 1.5f, 0.0f);
+    mPlayer[0].transform.position = new Vector3(0.0f, 0.5f, 0.0f);
+    mPlayer[1].transform.position = new Vector3(0.0f, 0.5f, 0.0f);
     mPlayer[0].enabled = true;
     mPlayer[1].enabled = true;
     mNextSpawn = TimeBetweenSpawns;
