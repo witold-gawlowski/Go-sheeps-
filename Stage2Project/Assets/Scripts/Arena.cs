@@ -26,9 +26,9 @@ public class Arena : MonoBehaviour
 
         if (Cam != null)
         {
-      Height = CameraUtils.FrustumHeightAtDistance(Cam.farClipPlane - 1.0f, Cam.fieldOfView);
+      Height = CameraUtils.FrustumHeightAtDistance(Cam.farClipPlane - 1.0f, Cam.fieldOfView) * 7 / 10;
             Width = Height * Cam.aspect;
-            transform.localScale = new Vector3(Width * 0.1f, 1.0f, Height * 0.1f);
+            transform.localScale = new Vector3(Width * 0.1f, 1.0f, Height * 0.1f );
         }
     }
 }
