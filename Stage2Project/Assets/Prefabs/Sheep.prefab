@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
   m_LocalRotation: {x: 0, y: -0.71636283, z: 0, w: 0.6977279}
-  m_LocalPosition: {x: -5.69, y: 0.88, z: -6.3054514}
+  m_LocalPosition: {x: -9.68, y: 0.85, z: -6.3054514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458585293796970}
@@ -329,7 +329,6 @@ MonoBehaviour:
   lambDuration: 15
   growDuration: 0.3
   initialSize: 0.7
-  sheepPrefab: {fileID: 1162436080353560}
   stopBreedingBuddyCount: 5
 --- !u!114 &114682315256986722
 MonoBehaviour:
@@ -402,7 +401,7 @@ MonoBehaviour:
   cohesionCoefficient: 1000
   avoidCoefficient: 6000
   allignCoefficient: 1200
-  separationCoefficient: 10000
+  separationCoefficient: 0
   forwardDrive: 70
   cohesionForceProportionalToDistance: 1
   isOnGrass: 0
@@ -417,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20a66703e7e08448a1cd80f43dc001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 2
 --- !u!212 &212285496020193396
 SpriteRenderer:
   m_ObjectHideFlags: 1

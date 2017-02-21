@@ -19,9 +19,6 @@ public class BreedScript : MonoBehaviour
   [SerializeField] private float initialSize = 0.3f;
 
   [SerializeField]
-  private GameObject sheepPrefab;
-
-  [SerializeField]
   private int stopBreedingBuddyCount;
 
   private FlockWithGroup flockScript;
@@ -79,7 +76,7 @@ public class BreedScript : MonoBehaviour
     float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {
-      GameObject spawnedSheep = Instantiate(sheepPrefab, transform.position, Quaternion.identity);
+      GameObject spawnedSheep = Instantiate(this.gameObject, transform.position, Quaternion.identity);
       spawnedSheep.GetComponent<HealthScript>().SetHealth(1);
       spawnedSheep.transform.parent = gameManager.transform;
       spawnedSheep.GetComponent<BreedScript>().Grow();

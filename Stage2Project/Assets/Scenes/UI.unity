@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woolText: {fileID: 42907850}
   timeText: {fileID: 103498628}
-  roundDuration: 60
+  roundDuration: 500
 --- !u!1 &1722102518
 GameObject:
   m_ObjectHideFlags: 0
