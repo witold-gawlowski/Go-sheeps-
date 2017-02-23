@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class ScreenManager : MonoBehaviour
   public static event GameEvent OnNewGame;
   public static event GameEvent OnExitGame;
 
-  public enum Screens { TitleScreen, GameScreen, ResultScreen, NumScreens }
+  public enum Screens { TitleScreen, GameScreen, ResultScreen, InstructionsScreen, NumScreens }
 
   private Canvas[] mScreens;
   private Screens mCurrentScreen;
@@ -47,6 +49,11 @@ public class ScreenManager : MonoBehaviour
     TransitionTo(Screens.GameScreen);
   }
 
+  public void ViewInstructions()
+  {
+    TransitionTo(Screens.InstructionsScreen);
+  }
+
   public void EndGame()
   {
     if (OnExitGame != null)
@@ -57,10 +64,27 @@ public class ScreenManager : MonoBehaviour
     TransitionTo(Screens.ResultScreen);
   }
 
+  public void GoToLevelSelection()
+  {
+    TransitionTo(Screens.ResultScreen);
+  }
+
+  public void QuitGame()
+  {
+    Application.Quit();
+  }
+
+  public void GoToMainMenu()
+  {
+    TransitionTo(Screens.TitleScreen);
+  }
+
   private void TransitionTo(Screens screen)
   {
     mScreens[(int)mCurrentScreen].enabled = false;
     mScreens[(int)screen].enabled = true;
     mCurrentScreen = screen;
   }
+
+
 }
