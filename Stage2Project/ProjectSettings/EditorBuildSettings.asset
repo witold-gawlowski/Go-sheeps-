@@ -10,6 +10,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Levels/Tutorial/1_SheepsAndFarms.unity
   - enabled: 1
-    path: Assets/Scenes/Levels/Tutorial/1SheepsAndFarms.unity
+    path: Assets/Scenes/Levels/BackgroundLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial/2_Wrapping.unity

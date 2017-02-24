@@ -121,8 +121,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110475527931212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.91, y: -0.06, z: 2.8064082}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2, y: -0.06, z: -3.2}
+  m_LocalScale: {x: 4, y: 1, z: 1}
   m_Children:
   - {fileID: 4422713499293482}
   - {fileID: 4474923246695466}
@@ -210,7 +210,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7f340400e334fa445aa014cfde755eef, type: 2}
+  - {fileID: 2100000, guid: f8387245056c3bb49af93d1225dca534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -241,7 +241,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7f340400e334fa445aa014cfde755eef, type: 2}
+  - {fileID: 2100000, guid: f8387245056c3bb49af93d1225dca534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,7 +272,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7f340400e334fa445aa014cfde755eef, type: 2}
+  - {fileID: 2100000, guid: f8387245056c3bb49af93d1225dca534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -303,7 +303,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7f340400e334fa445aa014cfde755eef, type: 2}
+  - {fileID: 2100000, guid: f8387245056c3bb49af93d1225dca534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,7 +334,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7f340400e334fa445aa014cfde755eef, type: 2}
+  - {fileID: 2100000, guid: f8387245056c3bb49af93d1225dca534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -412,7 +412,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.88, z: 6.96}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 49.35, y: -0.7399989, z: -18.565008}
+  m_ConnectedAnchor: {x: -2, y: 0.82, z: 3.76}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -445,4 +445,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 1, z: 11.91}
-  m_Center: {x: 0, y: 1.16, z: 0.82}
+  m_Center: {x: 0, y: 0.7, z: 0.82}

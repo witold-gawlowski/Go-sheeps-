@@ -80,6 +80,7 @@ public class ScreenManager : MonoBehaviour
   public void GoToMainMenu()
   {
     TransitionTo(Screens.TitleScreen);
+    SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
   }
 
   private void TransitionTo(Screens screen)
