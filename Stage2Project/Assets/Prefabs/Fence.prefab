@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110475527931212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: -0.06, z: -3.2}
+  m_LocalPosition: {x: -26.400007, y: 0, z: -25.800016}
   m_LocalScale: {x: 4, y: 1, z: 1}
   m_Children:
   - {fileID: 4422713499293482}
@@ -131,7 +131,7 @@ Transform:
   - {fileID: 4568938994439242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4422713499293482
 Transform:
   m_ObjectHideFlags: 1
@@ -399,8 +399,8 @@ Rigidbody:
   m_AngularDrag: 0.001
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
+  m_Interpolate: 1
+  m_Constraints: 116
   m_CollisionDetection: 2
 --- !u!59 &59851269588675592
 HingeJoint:
@@ -412,7 +412,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.88, z: 6.96}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2, y: 0.82, z: 3.76}
+  m_ConnectedAnchor: {x: -37.940006, y: 0.82, z: 12.500006}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -444,5 +444,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 11.91}
+  m_Size: {x: 0.22, y: 1.73, z: 13.2}
   m_Center: {x: 0, y: 0.7, z: 0.82}
