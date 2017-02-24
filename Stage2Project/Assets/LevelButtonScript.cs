@@ -13,8 +13,7 @@ public class LevelButtonScript : MonoBehaviour
   [SerializeField]
   private Image highlightImage;
 
-  [SerializeField]
-  private string levelName;
+  public string levelName;
 
   public delegate void GameEvent();
   public static event GameEvent OnLevelChange;
@@ -26,12 +25,6 @@ public class LevelButtonScript : MonoBehaviour
     OnLevelChange += Desselect;
   }
 
-  public void StartGame()
-  {
-    print(LevelButtonScript.SelectedButtonScript.levelName);
-    //SceneManager.UnloadSceneAsync();
-    SceneManager.LoadScene(LevelButtonScript.SelectedButtonScript.levelName);
-  }
 
   public LevelButtonScript GetNextLevel()
   {

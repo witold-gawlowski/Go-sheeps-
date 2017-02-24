@@ -25,15 +25,17 @@ public class BreedScript : MonoBehaviour
   private int minBreedingBuddyCount = 2; // ;)
 
   private FlockWithGroup flockScript;
-  private GameManager gameManager;
   private GroupTag groupTag;
   private bool isOnGrass;
+  private GameObject sheepParent;
   
   void Start()
   {
     flockScript = GetComponent<FlockWithGroup>();
-    gameManager = FindObjectOfType<GameManager>();
+    
     groupTag = GetComponent<GroupTag>();
+    sheepParent = GameObject.FindGameObjectWithTag("SheepParent");
+
   }
 
   IEnumerator GrowCoroutine()
@@ -81,7 +83,7 @@ public class BreedScript : MonoBehaviour
     {
       GameObject spawnedSheep = Instantiate(this.gameObject, transform.position, Quaternion.identity);
       spawnedSheep.GetComponent<HealthScript>().SetHealth(1);
-      spawnedSheep.transform.parent = gameManager.transform;
+      spawnedSheep.transform.parent = sheepParent.transform;
       spawnedSheep.GetComponent<BreedScript>().Grow();
     }
   }

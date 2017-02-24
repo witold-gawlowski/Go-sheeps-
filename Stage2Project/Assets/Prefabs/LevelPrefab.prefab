@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 20636106399199410}
   - component: {fileID: 124010483970238802}
   - component: {fileID: 92699746585229318}
-  - component: {fileID: 81471855628551764}
   - component: {fileID: 82670793611630008}
   - component: {fileID: 114187705709560398}
   m_Layer: 0
@@ -167,7 +166,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479980103468016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -212,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 1748682220627742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.482629, y: 1, z: 9.986103}
+  m_LocalScale: {x: 13.314804, y: 1, z: 9.986103}
   m_Children: []
   m_Father: {fileID: 4010657936069248}
   m_RootOrder: 1
@@ -372,13 +371,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!81 &81471855628551764
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108992657674000}
-  m_Enabled: 1
 --- !u!82 &82670793611630008
 AudioSource:
   m_ObjectHideFlags: 1
@@ -392,7 +384,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -475,7 +467,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95537525, b: 0.5955882, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
@@ -509,7 +501,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95537525, b: 0.5955882, a: 1}
   m_Intensity: 0.63
   m_Range: 10
   m_SpotAngle: 30
@@ -543,7 +535,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95537525, b: 0.5955882, a: 1}
   m_Intensity: 0.63
   m_Range: 10
   m_SpotAngle: 30
@@ -577,7 +569,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95537525, b: 0.5955882, a: 1}
   m_Intensity: 0.63
   m_Range: 10
   m_SpotAngle: 30
@@ -639,9 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea46d5eaee5daa47811540d6bd06bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPrefabs:
-  - {fileID: 0}
-  - {fileID: 1162436080353560, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   PlayerPrefab: {fileID: 114645105814637946, guid: 7ad876dc80acfcd48a1fd4b15250b137,
     type: 2}
   Arena: {fileID: 114797204937818614}

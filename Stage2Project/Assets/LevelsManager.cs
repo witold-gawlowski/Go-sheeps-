@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelsManager : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class LevelsManager : MonoBehaviour
       }
     }
   }
+
+  public void StartGame()
+  {
+    print(LevelButtonScript.SelectedButtonScript.levelName);
+    SceneManager.LoadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName, LoadSceneMode.Additive);
+    
+  }
+
   void Start()
   {
     levels = new List<LevelButtonScript>();

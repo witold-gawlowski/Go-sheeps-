@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
   void Awake()
   {
+    print("gamemanager awake");
     mPlayer = new Player[2];
     mPlayer[0] = Instantiate(PlayerPrefab);
     mPlayer[0].playerID = 1;
@@ -42,11 +43,15 @@ public class GameManager : MonoBehaviour
   void Start()
   {
     Arena.Calculate();
-    mPlayer[0].enabled = false;
-    mPlayer[1].enabled = false;
     mPlayer[0].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs1;
     mPlayer[1].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs2;
     mState = State.Paused;
+  }
+
+  void OnDestroy()
+  {
+    ScreenManager.OnNewGame -= ScreenManager_OnNewGame;
+    ScreenManager.OnExitGame -= ScreenManager_OnExitGame;
   }
 
   void Update()

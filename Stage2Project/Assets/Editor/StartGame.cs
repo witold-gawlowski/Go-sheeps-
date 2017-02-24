@@ -34,6 +34,6 @@ public class StartGame : MonoBehaviour {
     }
 
     EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-    EditorSceneManager.OpenScene("Assets/Scenes/Game.unity");
+    EditorSceneManager.OpenScene("Assets/Scenes/UI");
   }
 }

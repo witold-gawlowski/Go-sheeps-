@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
 	{
 		for( int count = 0; count < Scenes.Length; count++ )
 		{
-            AsyncOperation ao = SceneManager.LoadSceneAsync(Scenes[count], LoadSceneMode.Additive);
+      AsyncOperation ao = SceneManager.LoadSceneAsync(Scenes[count], LoadSceneMode.Additive);
 			if( ao != null )
 			{
 				while( !ao.isDone )

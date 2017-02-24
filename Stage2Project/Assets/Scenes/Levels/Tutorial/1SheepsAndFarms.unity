@@ -744,75 +744,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82670793611630008, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 13.314804
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.95537525
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5955882
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5955882
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5955882
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5955882
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.95537525
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.95537525
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.95537525
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
   m_IsPrefabParent: 0
@@ -974,7 +905,7 @@ GameObject:
   - component: {fileID: 1992311050}
   m_Layer: 0
   m_Name: Sheeps
-  m_TagString: Untagged
+  m_TagString: SheepParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

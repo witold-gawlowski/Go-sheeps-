@@ -62,13 +62,14 @@ public class ScreenManager : MonoBehaviour
     {
       OnExitGame();
     }
-
     TransitionTo(Screens.ResultScreen);
+    SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName);
   }
 
   public void GoToLevelSelection()
   {
     TransitionTo(Screens.ResultScreen);
+    SceneManager.UnloadSceneAsync("Scenes/Levels/BackgroundLevel");
   }
 
   public void QuitGame()

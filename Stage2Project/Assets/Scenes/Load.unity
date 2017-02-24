@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scenes:
   - UI
-  - Game
+  - Scenes/Levels/BackgroundLevel
 --- !u!4 &121832442
 Transform:
   m_ObjectHideFlags: 0
