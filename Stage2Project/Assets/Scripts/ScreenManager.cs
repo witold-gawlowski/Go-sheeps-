@@ -64,6 +64,7 @@ public class ScreenManager : MonoBehaviour
     }
     TransitionTo(Screens.ResultScreen);
     SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName);
+    OnLevelComplete();
   }
 
   public void GoToLevelSelection()

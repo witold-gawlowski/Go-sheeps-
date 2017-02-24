@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/BackgroundLevel.unity
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial/2_Wrapping.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial/3_Fences.unity
