@@ -9,6 +9,8 @@ public class ScreenManager : MonoBehaviour
   public delegate void GameEvent();
   public static event GameEvent OnNewGame;
   public static event GameEvent OnExitGame;
+  public static event GameEvent OnLevelComplete;
+
 
   public enum Screens { TitleScreen, GameScreen, ResultScreen, InstructionsScreen, NumScreens }
 

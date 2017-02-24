@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour
   public enum State { Paused, Playing }
 
   [SerializeField]
-  private GameObject[] SpawnPrefabs;
-
-  [SerializeField]
   private Player PlayerPrefab;
 
   [SerializeField]
