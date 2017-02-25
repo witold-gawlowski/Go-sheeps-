@@ -36,7 +36,9 @@ public class FlockWithGroup : MonoBehaviour
   private Rigidbody mBody;
   private float mCountDownToCheck;
   private GroupTag groupTag;
-  private int cohesionCount;
+  public int cohesionCount;
+  //delete me.
+  public int buddyCount;
   public bool isOnGrass;
 
 
@@ -63,6 +65,7 @@ public class FlockWithGroup : MonoBehaviour
     {
       mBody.AddForce(transform.forward * forwardDrive);
     }
+    buddyCount = mCurrentBuddies.Count;
   }
 
   public void EnterGrass()

@@ -11,13 +11,17 @@ public class Arena : MonoBehaviour
     public static float Width { get; private set; }
     public static float Height { get; private set; }
 
+
     void Update()
     {
-#if UNITY_EDITOR 
-        if (!Application.isPlaying)
-        {
-            Calculate();
-        }
+
+#if UNITY_EDITOR
+    Calculate();
+    //Todo: why not working with this if statement?
+    //if (!Application.isPlaying)
+    //    {
+    //  Calculate();
+    //    }
 #endif
     }
 
@@ -26,7 +30,7 @@ public class Arena : MonoBehaviour
 
         if (Cam != null)
         {
-      Height = CameraUtils.FrustumHeightAtDistance(Cam.farClipPlane - 1.0f, Cam.fieldOfView) * 7 / 10;
+            Height = CameraUtils.FrustumHeightAtDistance(Cam.farClipPlane - 1.0f, Cam.fieldOfView) * 7 / 10;
             Width = Height * Cam.aspect;
             transform.localScale = new Vector3(Width * 0.1f, 1.0f, Height * 0.1f );
         }

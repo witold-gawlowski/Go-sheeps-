@@ -78,7 +78,7 @@ public class BreedScript : MonoBehaviour
       return;
     }
     float breedChancePerFrame = isOnGrass ? grassBreedChancePerFrame : standardBreedChancePerFrame;
-    float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetColorBuddyCount());
+    float chanceToBreedWithAnyBuddyPerFrame = 1 - Mathf.Pow(1 - breedChancePerFrame, flockScript.GetBuddyCount());
     if (Random.value < chanceToBreedWithAnyBuddyPerFrame)
     {
       GameObject spawnedSheep = Instantiate(this.gameObject, transform.position, Quaternion.identity);
