@@ -12,6 +12,9 @@ public class MagnetizedByPlayer : MonoBehaviour
   private float ForceCoefficient = 1000.0f;
 
   [SerializeField]
+  private float forceCap = 1000.0f;
+
+  [SerializeField]
   private float MinimumDistance = 1.0f;
 
   [SerializeField]
@@ -41,7 +44,9 @@ public class MagnetizedByPlayer : MonoBehaviour
       {
         if (MagnetizeType == Type.Repel)
         {
-          mBody.AddForce(playerToBoid.normalized / mag/mag * ForceCoefficient * Time.deltaTime);
+          float forceMagnitude =  1 / mag / mag * ForceCoefficient * Time.deltaTime;
+          forceMagnitude = Mathf.Min(forceMagnitude, forceCap);
+          mBody.AddForce(playerToBoid.normalized * forceMagnitude);
         }
         else
         {

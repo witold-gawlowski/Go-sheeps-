@@ -178,8 +178,8 @@ public class FlockWithGroup : MonoBehaviour
       //}
       //Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
-      Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
-      Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
+      //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
+      //Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
       mBody.AddForce((align * allignCoefficient +
         cohesion * cohesionCoefficient +
         avoid * avoidCoefficient +
