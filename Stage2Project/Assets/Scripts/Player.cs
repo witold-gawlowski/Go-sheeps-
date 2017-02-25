@@ -82,6 +82,6 @@ public class Player : MonoBehaviour
       packManager.Summon();
     }
 
-    mBody.AddForce(direction * Speed * Time.deltaTime);
+    mBody.AddForce(direction * Speed * Time.deltaTime, ForceMode.VelocityChange);
   }
 }

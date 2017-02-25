@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224378478591942576}
   - component: {fileID: 222060829314197914}
   - component: {fileID: 114516946464503040}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224521173650860232}
   - component: {fileID: 222959268654168038}
   - component: {fileID: 114160789019616416}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Yarn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224918774522862798}
   - component: {fileID: 222890090601789422}
   - component: {fileID: 114587037876269048}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PressToBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224987849494087052}
   - component: {fileID: 222878615217560210}
   - component: {fileID: 114238783715344368}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ShepherdText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 65417223953280652}
   - component: {fileID: 23984746517683526}
   - component: {fileID: 114626855917796328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 65015713816756614}
   - component: {fileID: 23898856018898932}
   - component: {fileID: 114897764025661422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 224962390525905152}
   - component: {fileID: 222591132173735068}
   - component: {fileID: 114636656830337834}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 33906395884528762}
   - component: {fileID: 65631038873077312}
   - component: {fileID: 23212464604507234}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4597514999007768}
   - component: {fileID: 33113207225293848}
   - component: {fileID: 23407636494669778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Roof2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 223302263550207456}
   - component: {fileID: 222823576253099270}
   - component: {fileID: 114820646944194790}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 4957653141199212}
   - component: {fileID: 33584091296650748}
   - component: {fileID: 23410071655914450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Roof1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4204457192745074}
   - component: {fileID: 212246791486042658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 33646440109920890}
   - component: {fileID: 65558331630855364}
   - component: {fileID: 23244559311344266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4580147980310702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Geometry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 4756722846590886}
   - component: {fileID: 114369384861289268}
   - component: {fileID: 135660533615634420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FurFarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,15 +14,15 @@ public class Arena : MonoBehaviour
 
     void Update()
     {
-
-#if UNITY_EDITOR
+//I needed to comment it as otherwise it wouldnt calculate the proper size of arena in game builds. 
+//#if UNITY_EDITOR
     Calculate();
     //Todo: why not working with this if statement?
     //if (!Application.isPlaying)
     //    {
     //  Calculate();
     //    }
-#endif
+//#endif
     }
 
     public void Calculate()
