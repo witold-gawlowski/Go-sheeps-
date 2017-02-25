@@ -12,6 +12,12 @@ public class LevelButtonScript : MonoBehaviour
   [SerializeField]
   private Image highlightImage;
 
+  [SerializeField]
+  private Sprite thumbnail;
+
+  [SerializeField]
+  private Image thumbnailImage;
+
   public string levelName;
 
   public delegate void GameEvent();
@@ -41,6 +47,7 @@ public class LevelButtonScript : MonoBehaviour
     OnLevelChange();
     highlightImage.enabled = true;
     SelectedButtonScript = this;
+    thumbnailImage.sprite = thumbnail;
   }
 
   public void Desselect()

@@ -30,6 +30,8 @@ public class FlockWithGroup : MonoBehaviour
   private float forwardDrive = 80.0f;
 
   [SerializeField]
+  private float maxForceMag = 1000.0f;
+  [SerializeField]
   private bool cohesionForceProportionalToDistance = true;
 
   private List<GroupTag> mCurrentBuddies;
@@ -183,11 +185,14 @@ public class FlockWithGroup : MonoBehaviour
       //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
       //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
       //Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
-      mBody.AddForce((align * allignCoefficient +
-        cohesion * cohesionCoefficient +
-        avoid * avoidCoefficient +
-        separation * separationCoefficient
-        ) * Time.deltaTime);
+      Vector3 force = (align * allignCoefficient +
+                       cohesion * cohesionCoefficient +
+                       avoid * avoidCoefficient +
+                       separation * separationCoefficient
+      );
+
+      force = Vector3.ClampMagnitude(force, maxForceMag);
+      mBody.AddForce( force * Time.deltaTime);
     }
    
   }

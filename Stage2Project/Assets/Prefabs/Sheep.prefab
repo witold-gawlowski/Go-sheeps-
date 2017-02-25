@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4612fbfcedd81489af538e52625def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 0.07
+  turnSpeed: 0.3
   minimumVelocity: 0.4
 --- !u!114 &114955881544127894
 MonoBehaviour:
@@ -394,6 +394,8 @@ MonoBehaviour:
   separationCoefficient: 0
   forwardDrive: 70
   cohesionForceProportionalToDistance: 1
+  cohesionCount: 0
+  buddyCount: 0
   isOnGrass: 0
 --- !u!114 &114984725727161362
 MonoBehaviour:

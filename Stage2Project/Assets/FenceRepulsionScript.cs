@@ -8,8 +8,14 @@ public class FenceRepulsionScript : MonoBehaviour {
 
   void OnTriggerStay(Collider other)
   {
+    if (other.tag != "Sheep")
+    {
+      return;
+    }
     float perpendicularDistance = Vector3.Dot(other.transform.position - transform.position, transform.right)+0.1f;
     Debug.DrawRay(other.transform.position, transform.right / perpendicularDistance);
-    other.GetComponentInParent<Rigidbody>().AddForce(transform.right / (Mathf.Abs(perpendicularDistance) * perpendicularDistance) * Time.deltaTime*30000);
+    Vector3 force = transform.right / (Mathf.Abs(perpendicularDistance) * perpendicularDistance) * Time.deltaTime * 30000;
+    force = Vector3.ClampMagnitude(force, 1000.0f);
+    other.GetComponentInParent<Rigidbody>().AddForce(force);
   }
 }
