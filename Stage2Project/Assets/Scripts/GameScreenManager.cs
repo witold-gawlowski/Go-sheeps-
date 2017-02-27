@@ -12,8 +12,6 @@ public class GameScreenManager : MonoBehaviour {
   private Text woolText;
   [SerializeField]
   private Text timeText;
-  [SerializeField]
-  private float roundDuration = 60;
 
   private float counter;
 
@@ -27,7 +25,12 @@ public class GameScreenManager : MonoBehaviour {
   void Awake()
   {
     OnWoolChange += UpdateWoolText;
-    OnWoolChange += CheckWinninCondition;
+    OnWoolChange += CheckWinningCondition;
+    ScreenManager.OnNewGame += NewRound;
+  }
+
+  void NewRound()
+  {
     counter = 0;
   }
   void Update()
@@ -36,7 +39,7 @@ public class GameScreenManager : MonoBehaviour {
     timeText.text = ((int)counter).ToString() + "s";
   }
 
-  void CheckWinninCondition(int total)
+  void CheckWinningCondition(int total)
   {
     if (total >= GameManager.GetCurrentTargetWool())
     {

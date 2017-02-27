@@ -135,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
-  m_LocalRotation: {x: -0, y: 0.5170562, z: -0, w: 0.8559515}
-  m_LocalPosition: {x: -25.3, y: 1.2, z: 23.1}
+  m_LocalRotation: {x: -0, y: -0.71636283, z: -0, w: 0.6977279}
+  m_LocalPosition: {x: -1.7349892, y: 15.05929, z: -12.985201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458585293796970}
@@ -260,7 +260,7 @@ Rigidbody:
   m_AngularDrag: 0.8
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 2
 --- !u!114 &114072596302714364
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ForceCoefficient: 300000
-  forceCap: 300
+  forceCap: 3000
   MinimumDistance: 20
   MagnetizeType: 1
 --- !u!114 &114665008357904544
@@ -320,6 +320,7 @@ MonoBehaviour:
   initialSize: 0.7
   maxBreedingBuddyCount: 6
   minBreedingBuddyCount: 1
+  sheepParent: {fileID: 0}
 --- !u!114 &114682315256986722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,12 +390,12 @@ MonoBehaviour:
   BuddyDistance: 10
   AvoidDistance: 7
   CheckForBuddiesInterval: 1
-  cohesionCoefficient: 1200
+  cohesionCoefficient: 5000
   avoidCoefficient: 6000
   allignCoefficient: 1200
   separationCoefficient: 0
-  forwardDrive: 70
-  maxForceMag: 700
+  forwardDrive: 35
+  maxForceMag: 2000
   cohesionForceProportionalToDistance: 1
   cohesionCount: 0
   buddyCount: 0

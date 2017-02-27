@@ -41,13 +41,15 @@ public class ScreenManager : MonoBehaviour
     mCurrentScreen = Screens.TitleScreen;
   }
 
+
+
+
   public void StartGame()
   {
     if (OnNewGame != null)
     {
       OnNewGame();
     }
-
     TransitionTo(Screens.GameScreen);
   }
 
@@ -64,13 +66,13 @@ public class ScreenManager : MonoBehaviour
     }
     TransitionTo(Screens.ResultScreen);
     SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName);
+    SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
     OnLevelComplete();
   }
 
   public void GoToLevelSelection()
   {
     TransitionTo(Screens.ResultScreen);
-    SceneManager.UnloadSceneAsync("Scenes/Levels/BackgroundLevel");
   }
 
   public void QuitGame()
@@ -81,7 +83,7 @@ public class ScreenManager : MonoBehaviour
   public void GoToMainMenu()
   {
     TransitionTo(Screens.TitleScreen);
-    SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
+    //SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
   }
 
   private void TransitionTo(Screens screen)

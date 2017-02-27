@@ -27,15 +27,20 @@ public class BreedScript : MonoBehaviour
   private FlockWithGroup flockScript;
   private GroupTag groupTag;
   private bool isOnGrass;
+
+  [SerializeField]
   private GameObject sheepParent;
   
+  void Awake()
+  {
+    sheepParent = GameObject.FindWithTag("SheepParent");
+  }
+
   void Start()
   {
     flockScript = GetComponent<FlockWithGroup>();
-    
     groupTag = GetComponent<GroupTag>();
-    sheepParent = GameObject.FindGameObjectWithTag("SheepParent");
-
+    
   }
 
   IEnumerator GrowCoroutine()

@@ -149,6 +149,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -464,24 +499,6 @@ Prefab:
       propertyPath: m_Name
       value: Sheep (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114682315256986722, guid: 5c19610f817145949ad08f5e93595a9f,
-        type: 2}
-      propertyPath: fullHairMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
-    - target: {fileID: 23333220724187512, guid: 5c19610f817145949ad08f5e93595a9f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -827,6 +844,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -962,6 +1014,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -1303,6 +1390,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -1780,6 +1902,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -1849,6 +2006,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -1984,6 +2176,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -2180,6 +2407,14 @@ Prefab:
         Welcome to GO Sheeps!
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638452216974508, guid: 16e50c976994a6446bd3058d4b834132, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638452216974508, guid: 16e50c976994a6446bd3058d4b834132, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16e50c976994a6446bd3058d4b834132, type: 2}
@@ -2381,6 +2616,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -2515,70 +2785,6 @@ Prefab:
     - target: {fileID: 4010657936069248, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.9393509
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8308824
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.9393509
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8308824
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.9393509
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8308824
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.9393509
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8308824
-      objectReference: {fileID: 0}
-    - target: {fileID: 108123199001825794, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108678664856418374, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108491259348800286, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108344367359555740, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 12.482629
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
@@ -2762,24 +2968,36 @@ Prefab:
       propertyPath: m_Name
       value: Sheep (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
       objectReference: {fileID: 0}
-    - target: {fileID: 114682315256986722, guid: 5c19610f817145949ad08f5e93595a9f,
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
         type: 2}
-      propertyPath: fullHairMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
-    - target: {fileID: 23333220724187512, guid: 5c19610f817145949ad08f5e93595a9f,
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
         type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -2893,52 +3111,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114881757009781640, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: farmType
+    - target: {fileID: 1636048442629410, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
+      propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212246791486042658, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114369384861289268, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: shephardCosts.Array.data[0]
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114369384861289268, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: shephardCosts.Array.data[1]
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114369384861289268, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: shephardCosts.Array.data[2]
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.y
-      value: 1.011
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527181232007446, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4756722846590886, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
@@ -3110,6 +3285,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0
@@ -3245,6 +3455,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forwardDrive
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 54213773289397510, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: cohesionCoefficient
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: ForceCoefficient
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611092410105980, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: forceCap
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955881544127894, guid: 5c19610f817145949ad08f5e93595a9f,
+        type: 2}
+      propertyPath: maxForceMag
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c19610f817145949ad08f5e93595a9f, type: 2}
   m_IsPrefabParent: 0

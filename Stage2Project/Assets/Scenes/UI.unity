@@ -381,13 +381,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71570158}
   m_TextComponent: {fileID: 1009799267}
   m_Placeholder: {fileID: 0}
-  m_ContentType: 4
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 1
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 3
+  m_CharacterValidation: 0
   m_CharacterLimit: 15
   m_OnEndEdit:
     m_PersistentCalls:
@@ -399,12 +399,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.8014706, g: 0.98357, b: 1, a: 0.272}
+  m_CaretColor: {r: 0.45328718, g: 0.73112106, b: 0.9632353, a: 1}
+  m_CustomCaretColor: 1
+  m_SelectionColor: {r: 0, g: 0.91724133, b: 1, a: 0.578}
   m_Text: Doggo and Daggo
   m_CaretBlinkRate: 0.85
-  m_CaretWidth: 1
+  m_CaretWidth: 2
   m_ReadOnly: 0
 --- !u!114 &71570161
 MonoBehaviour:

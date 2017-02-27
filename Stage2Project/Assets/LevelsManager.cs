@@ -24,11 +24,18 @@ public class LevelsManager : MonoBehaviour
     }
   }
 
+  IEnumerator LoadSceneOnUnload(AsyncOperation op)
+  {
+    while (!op.isDone)
+    {
+      yield return null;
+    }
+    SceneManager.LoadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName, LoadSceneMode.Additive);
+  }
   public void StartGame()
   {
-    print(LevelButtonScript.SelectedButtonScript.levelName);
-    SceneManager.LoadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName, LoadSceneMode.Additive);
-    
+    AsyncOperation op = SceneManager.UnloadSceneAsync("Scenes/Levels/BackgroundLevel");
+    StartCoroutine(LoadSceneOnUnload(op));
   }
 
   void Start()

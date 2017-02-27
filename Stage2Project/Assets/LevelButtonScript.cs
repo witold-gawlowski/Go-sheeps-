@@ -38,7 +38,6 @@ public class LevelButtonScript : MonoBehaviour
 
   public void Complete()
   {
-    print("activation");
     nextLevel.gameObject.SetActive(true);
   }
 
