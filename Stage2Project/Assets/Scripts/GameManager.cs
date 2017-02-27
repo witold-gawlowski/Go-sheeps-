@@ -19,14 +19,21 @@ public class GameManager : MonoBehaviour
   [SerializeField]
   private float BlackSheepFraction = 0.2f;
 
+  [SerializeField]
+  private int targetWool = 15;
+
   private List<GameObject> mObjects;
   private Player[] mPlayer;
   private State mState;
   private float mNextSpawn;
   private Text moneyText;
   private GameObject playerStart;
+
+  private static int staticTargetWool;
+
   void Awake()
   {
+    staticTargetWool = targetWool;
     playerStart = GameObject.FindGameObjectWithTag("PlayerStart");
     mPlayer = new Player[2];
     mPlayer[0] = Instantiate(PlayerPrefab);
@@ -49,6 +56,11 @@ public class GameManager : MonoBehaviour
     mPlayer[0].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs1;
     mPlayer[1].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs2;
     mState = State.Paused;
+  }
+
+  public static int GetCurrentTargetWool()
+  {
+    return staticTargetWool;
   }
 
   void OnDestroy()

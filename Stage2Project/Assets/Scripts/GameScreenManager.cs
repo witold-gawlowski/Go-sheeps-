@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,18 +27,22 @@ public class GameScreenManager : MonoBehaviour {
   void Awake()
   {
     OnWoolChange += UpdateWoolText;
-    counter = roundDuration;
+    OnWoolChange += CheckWinninCondition;
+    counter = 0;
   }
   void Update()
   {
-    counter -= Time.deltaTime;
-    if (counter < 0)
-    {
-      GetComponentInParent<ScreenManager>().EndGame();
-    }
+    counter += Time.deltaTime;
     timeText.text = ((int)counter).ToString() + "s";
   }
 
+  void CheckWinninCondition(int total)
+  {
+    if (total >= GameManager.GetCurrentTargetWool())
+    {
+      GetComponentInParent<ScreenManager>().EndGame();
+    }
+  }
 
 
   void UpdateWoolText(int total)
