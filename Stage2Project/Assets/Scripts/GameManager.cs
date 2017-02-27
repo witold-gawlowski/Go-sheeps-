@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+  public delegate void GameEvent();
+  public static event GameEvent GameManagerInitializedEvent;
+
   public enum State { Paused, Playing }
 
   [SerializeField]
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     ScreenManager.OnNewGame += ScreenManager_OnNewGame;
     ScreenManager.OnExitGame += ScreenManager_OnExitGame;
+
   }
 
   void Start()
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
     mPlayer[0].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs1;
     mPlayer[1].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs2;
     mState = State.Paused;
+    GameManagerInitializedEvent();
   }
 
   public static int GetCurrentTargetWool()

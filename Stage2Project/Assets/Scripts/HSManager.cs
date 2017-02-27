@@ -43,7 +43,6 @@ public class HSManager : MonoBehaviour
     //string hash = MD5Test.Md5Sum(name + score + secretKey);
 
     string post_url = addScoreURL + "?name=" + WWW.EscapeURL(name) + "&score=" + score;// + "&hash=" + hash;
-    MonoBehaviour.print(post_url);
     // Post the URL to the site and create a download object to get the result.
     WWW hs_post = new WWW(post_url);
     yield return hs_post; // Wait until the download is done

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameScreenManager : MonoBehaviour {
   public delegate void WoolChange(int amount);
+
   static event WoolChange OnWoolChange;
 
   [SerializeField]
@@ -28,10 +29,15 @@ public class GameScreenManager : MonoBehaviour {
     OnWoolChange += CheckWinningCondition;
     ScreenManager.OnNewGame += NewRound;
   }
-
+  void Start()
+  {
+    GameManager.GameManagerInitializedEvent += NewRound;
+  }
+  
   void NewRound()
   {
     counter = 0;
+    UpdateWoolText(0);
   }
   void Update()
   {
@@ -51,7 +57,7 @@ public class GameScreenManager : MonoBehaviour {
   }
 
 
-  void UpdateWoolText(int total)
+  public void UpdateWoolText(int total)
   {
     woolText.text = "x " + total.ToString() + "/" + GameManager.GetCurrentTargetWool();
   }

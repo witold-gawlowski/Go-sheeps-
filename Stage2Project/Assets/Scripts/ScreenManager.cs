@@ -61,7 +61,6 @@ public class ScreenManager : MonoBehaviour
 
   public void LevelComplete(float completionTime)
   {
-    print("level complete event");
     OnLevelComplete(completionTime);
   }
 

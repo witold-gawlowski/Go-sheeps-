@@ -49,7 +49,6 @@ public class LevelsManager : MonoBehaviour
 
   private void ChangeLevel()
   {
-    print("Update GUI");
   }
 
   public void LevelComplete(float ignore)
