@@ -135,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
-  m_LocalRotation: {x: 0, y: -0.71636283, z: 0, w: 0.6977279}
-  m_LocalPosition: {x: -17.444754, y: 4.32, z: 30.448257}
+  m_LocalRotation: {x: -0, y: -0.71636283, z: -0, w: 0.6977279}
+  m_LocalPosition: {x: -22, y: 15.05929, z: 28.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458585293796970}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ForceCoefficient: 300000
-  forceCap: 1000
+  forceCap: 300
   MinimumDistance: 30
   MagnetizeType: 1
 --- !u!114 &114665008357904544
@@ -393,6 +393,7 @@ MonoBehaviour:
   allignCoefficient: 1200
   separationCoefficient: 0
   forwardDrive: 70
+  maxForceMag: 700
   cohesionForceProportionalToDistance: 1
   cohesionCount: 0
   buddyCount: 0
