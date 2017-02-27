@@ -19,6 +19,9 @@ public class FurManager : MonoBehaviour
   private Material fullHairMaterial;
 
   [SerializeField]
+  private Material altFullHairMaterial;
+
+  [SerializeField]
   private float furGrowthDuration = 4.0f;
 
   [SerializeField]
@@ -43,6 +46,8 @@ public class FurManager : MonoBehaviour
       throw new Exception("Sheep can't be shaved from the start.");
     }
   }
+
+
 
   public bool IsShaved()
   {

@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114061193343975710}
   - component: {fileID: 114155630630270132}
   - component: {fileID: 114765203129476356}
+  - component: {fileID: 114116073391139910}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -186,6 +187,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 0.9
   minimumVelocity: 7
+--- !u!114 &114116073391139910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889219130319842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 28
+  speedLimitingFactor: 10
 --- !u!114 &114155630630270132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7038e7bb941a78e44bc347be170e7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 80
+  Speed: 180
   playerID: 1
 --- !u!114 &114645908955841662
 MonoBehaviour:

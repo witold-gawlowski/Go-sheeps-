@@ -135,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
-  m_LocalRotation: {x: -0, y: -0.71636283, z: -0, w: 0.6977279}
-  m_LocalPosition: {x: -22, y: 15.05929, z: 28.3}
+  m_LocalRotation: {x: -0, y: 0.5170562, z: -0, w: 0.8559515}
+  m_LocalPosition: {x: -25.3, y: 1.2, z: 23.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458585293796970}
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForceCoefficient: 300000
   forceCap: 300
-  MinimumDistance: 30
+  MinimumDistance: 20
   MagnetizeType: 1
 --- !u!114 &114665008357904544
 MonoBehaviour:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardBreedChancePerFrame: 0.00003
-  grassBreedChancePerFrame: 0.0005
+  grassBreedChancePerFrame: 0.001
   lambDuration: 15
   growDuration: 0.3
   initialSize: 0.7
@@ -335,6 +335,7 @@ MonoBehaviour:
   grownFurWidth: 1
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
+  altFullHairMaterial: {fileID: 0}
   furGrowthDuration: 20
   grassFurGrowthSpeedMultiplier: 2
   furColor: 0
@@ -388,7 +389,7 @@ MonoBehaviour:
   BuddyDistance: 10
   AvoidDistance: 7
   CheckForBuddiesInterval: 1
-  cohesionCoefficient: 1000
+  cohesionCoefficient: 1200
   avoidCoefficient: 6000
   allignCoefficient: 1200
   separationCoefficient: 0
