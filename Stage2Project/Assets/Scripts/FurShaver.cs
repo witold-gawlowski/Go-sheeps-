@@ -45,7 +45,6 @@ public class FurShaver : MonoBehaviour
     {
       furManager.Shave();
       BallsOfYarn++;
-      GameScreenManager.ChangeWool(BallsOfYarn);
     }
   }
 

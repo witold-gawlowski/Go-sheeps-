@@ -194,12 +194,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4332998799945746, guid: 16e50c976994a6446bd3058d4b834132, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114586473543158344, guid: 16e50c976994a6446bd3058d4b834132,
         type: 2}
       propertyPath: m_Text
-      value: 'Tutorial 2/7:
+      value: 'TUTORIAL 2/7:
 
 
         just like this text! Levels wrap
@@ -567,6 +567,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f,
     type: 2}
   m_PrefabInternal: {fileID: 355080495}
+--- !u!1001 &363796297
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 33.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054701460359240, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b58019359a29efa43ad3895e2a17c031, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &375570233
 Prefab:
   m_ObjectHideFlags: 0
@@ -1410,7 +1452,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4446500498382790, guid: eec8545ac8f1b5241a46b2fff97cd39c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eec8545ac8f1b5241a46b2fff97cd39c, type: 2}
@@ -1989,6 +2031,11 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 12.482629
       objectReference: {fileID: 0}
+    - target: {fileID: 114602649155593434, guid: 766d512ee0eae3141b73d21ff29d6ef2,
+        type: 2}
+      propertyPath: targetWool
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
   m_IsPrefabParent: 0
@@ -2423,7 +2470,7 @@ Transform:
   - {fileID: 1746399904}
   - {fileID: 1867907940}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1988866713
 Prefab:
@@ -2462,7 +2509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756722846590886, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114881757009781640, guid: 70d9258e43792434aa5f3724f608cf40,
         type: 2}
@@ -2553,5 +2600,5 @@ Transform:
   - {fileID: 268884054}
   - {fileID: 1018482263}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -153.78, z: 0}

@@ -36,9 +36,12 @@ public class LevelButtonScript : MonoBehaviour
     return nextLevel;
   }
 
-  public void Complete()
+  public void Complete(float ignore)
   {
-    nextLevel.gameObject.SetActive(true);
+    if (SelectedButtonScript == this)
+    {
+      nextLevel.gameObject.SetActive(true);
+    }
   }
 
   public void Select()

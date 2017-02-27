@@ -43,13 +43,16 @@ public class GameScreenManager : MonoBehaviour {
   {
     if (total >= GameManager.GetCurrentTargetWool())
     {
-      GetComponentInParent<ScreenManager>().EndGame();
+      FurShaver.BallsOfYarn = 0;
+      ScreenManager screenManager = GetComponentInParent<ScreenManager>();
+      screenManager.EndGame();
+      screenManager.LevelComplete(counter);
     }
   }
 
 
   void UpdateWoolText(int total)
   {
-    woolText.text = "x " + total.ToString();
+    woolText.text = "x " + total.ToString() + "/" + GameManager.GetCurrentTargetWool();
   }
 }

@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811297550514456}
   m_LocalRotation: {x: 0, y: -0.41707397, z: 0, w: 0.9088726}
-  m_LocalPosition: {x: -43.4, y: 3, z: -28}
+  m_LocalPosition: {x: 54.7, y: 2.95, z: 45.5}
   m_LocalScale: {x: 0.4, y: 6, z: 0.4}
   m_Children:
   - {fileID: 4638452216974508}
@@ -135,13 +135,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738954847201322}
-  m_LocalRotation: {x: -0.0016143378, y: 0.6378925, z: -0.0019489743, w: 0.77012134}
-  m_LocalPosition: {x: 0, y: 0.30833337, z: -1.175}
+  m_LocalRotation: {x: -0.0017894953, y: 0.70710456, z: -0.0017894953, w: 0.70710456}
+  m_LocalPosition: {x: -1.44, y: 0.30833337, z: -0.79}
   m_LocalScale: {x: 12.5, y: 0.4166667, z: 1}
   m_Children: []
   m_Father: {fileID: 4332998799945746}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 79.27, z: -0.29}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -0.29}
 --- !u!23 &23894103521283554
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -305,23 +305,21 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 73ed48fe762682e4bb48b43f5c4215f5, type: 3}
-    m_FontSize: 10
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 58
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tutorial 1/7:
+  m_Text: '"Beee"
 
 
-    Welcome to GO Sheeps!
-
-'
+    Sheep'
 --- !u!135 &135800861666533708
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -416,7 +414,7 @@ RectTransform:
   m_GameObject: {fileID: 1222330382194216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 224387971928937330}
   m_RootOrder: 0
@@ -424,7 +422,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50.5, y: -48.4}
-  m_SizeDelta: {x: 74.41, y: 86.7}
+  m_SizeDelta: {x: 394.6, y: 429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224954197867013770
 RectTransform:

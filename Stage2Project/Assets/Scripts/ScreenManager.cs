@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
+  public delegate void LevelCompleteEvent(float duration);
   public delegate void GameEvent();
   public static event GameEvent OnNewGame;
   public static event GameEvent OnExitGame;
-  public static event GameEvent OnLevelComplete;
+  public static event LevelCompleteEvent OnLevelComplete;
 
 
   public enum Screens { TitleScreen, GameScreen, ResultScreen, InstructionsScreen, NumScreens }
@@ -58,6 +59,12 @@ public class ScreenManager : MonoBehaviour
     TransitionTo(Screens.InstructionsScreen);
   }
 
+  public void LevelComplete(float completionTime)
+  {
+    print("level complete event");
+    OnLevelComplete(completionTime);
+  }
+
   public void EndGame()
   {
     if (OnExitGame != null)
@@ -67,7 +74,7 @@ public class ScreenManager : MonoBehaviour
     TransitionTo(Screens.ResultScreen);
     SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName);
     SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
-    OnLevelComplete();
+
   }
 
   public void GoToLevelSelection()

@@ -52,9 +52,10 @@ public class LevelsManager : MonoBehaviour
     print("Update GUI");
   }
 
-  public void LevelComplete()
+  public void LevelComplete(float ignore)
   {
-    LevelButtonScript.SelectedButtonScript.Complete();
+    LevelButtonScript.SelectedButtonScript.Complete(0.0f);
+
   }
 
 }

@@ -650,7 +650,7 @@ MonoBehaviour:
   Arena: {fileID: 114797204937818614}
   TimeBetweenSpawns: 1
   BlackSheepFraction: 0.2
-  targetWool: 15
+  targetWool: 8
 --- !u!114 &114797204937818614
 MonoBehaviour:
   m_ObjectHideFlags: 1

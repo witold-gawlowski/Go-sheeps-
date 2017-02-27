@@ -884,20 +884,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 12.482629
-      objectReference: {fileID: 0}
-    - target: {fileID: 64148433582540850, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20636106399199410, guid: 766d512ee0eae3141b73d21ff29d6ef2,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
   m_IsPrefabParent: 0
