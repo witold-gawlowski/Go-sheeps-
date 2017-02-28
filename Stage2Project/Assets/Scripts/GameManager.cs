@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
     }
     else
     {
-      print("one");
       mPlayer[1].gameObject.SetActive(false);
     }
     GameManagerInitializedEvent();

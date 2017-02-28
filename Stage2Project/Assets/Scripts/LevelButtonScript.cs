@@ -62,9 +62,6 @@ public class LevelButtonScript : MonoBehaviour
 
   public void Select()
   {
-
-
-    print(highlightImage.enabled + " is highlight image enabled");
     SelectedButtonScript = this;
     thumbnailImage.sprite = thumbnail;
     OnLevelChange();

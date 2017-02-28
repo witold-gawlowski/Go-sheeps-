@@ -61,7 +61,6 @@ public class LevelsManager : MonoBehaviour
       {
         return;
       }
-      print(currentLevelName + " current level name");
       currentLevel = currentLevel.GetNextLevel();
       if (currentLevel == null)
       {
