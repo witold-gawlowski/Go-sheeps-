@@ -18,31 +18,34 @@ public class HSManager : MonoBehaviour
 
   void Start()
   {
-    StartCoroutine(GetScores());
+    StartCoroutine(GetScores(LevelButtonScript.SelectedButtonScript.GetLevelName()));
     ScreenManager.OnLevelComplete += HandleScores;
     ScreenManager.OnExitGame += DisplayScore;
     ScreenManager.OnNewGame += DisplayScore;
+    LevelButtonScript.OnLevelChange += DisplayScore;
   }
 
   public void HandleScores(float completionTime)
   {
-    StartCoroutine(PostScores(playerName.text, (int)completionTime));
+    StartCoroutine(PostScores(playerName.text, (int)completionTime, LevelButtonScript.SelectedButtonScript.GetLevelName()));
   }
 
   public void DisplayScore()
   {
-    StartCoroutine(GetScores());
+    StartCoroutine(GetScores(LevelButtonScript.SelectedButtonScript.GetLevelName()));
   }
 
 
     // remember to use StartCoroutine when calling this function!
-  IEnumerator PostScores(string name, int score)
+  IEnumerator PostScores(string name, int score, string levelName)
   {
     //This connects to a server side php script that will add the name and score to a MySQL DB.
     // Supply it with a string representing the players name and the players score.
     //string hash = MD5Test.Md5Sum(name + score + secretKey);
 
-    string post_url = addScoreURL + "?name=" + WWW.EscapeURL(name) + "&score=" + score;// + "&hash=" + hash;
+    string post_url = addScoreURL + "?name=" + WWW.EscapeURL(name) + "&score=" + score +
+      "&levelID=" + WWW.EscapeURL(levelName);// + " & hash=" + hash;
+    //print(post_url);
     // Post the URL to the site and create a download object to get the result.
     WWW hs_post = new WWW(post_url);
     yield return hs_post; // Wait until the download is done
@@ -55,10 +58,12 @@ public class HSManager : MonoBehaviour
 
   // Get the scores from the MySQL DB to display in a GUIText.
   // remember to use StartCoroutine when calling this function!
-  IEnumerator GetScores()
+  IEnumerator GetScores(string levelName)
   {
-    highscoresText.text = "Loading Scores";
-    WWW hs_get = new WWW(highscoreURL);
+    highscoresText.text = "Loading Scores...";
+    string get_url = highscoreURL + "?levelID=" + WWW.EscapeURL(levelName);
+    //print(get_url);
+    WWW hs_get = new WWW(get_url);
     yield return hs_get;
 
     if (hs_get.error != null)

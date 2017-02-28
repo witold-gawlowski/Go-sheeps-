@@ -60,6 +60,16 @@ public class GameManager : MonoBehaviour
     mPlayer[0].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs1;
     mPlayer[1].GetComponent<GroupTag>().Affiliation = GroupTag.Group.Dogs2;
     mState = State.Paused;
+    if (LevelsManager.PlayerNumber == 2)
+    {
+      print("two" + LevelsManager.PlayerNumber);
+      mPlayer[1].gameObject.SetActive(true);
+    }
+    else
+    {
+      print("one");
+      mPlayer[1].gameObject.SetActive(false);
+    }
     GameManagerInitializedEvent();
   }
 
@@ -98,8 +108,10 @@ public class GameManager : MonoBehaviour
     */
   }
 
+  //this is now never called. 
   private void BeginNewGame()
   {
+    print("begin game");
     if (mObjects != null)
     {
       for (int count = 0; count < mObjects.Count; ++count)
@@ -110,9 +122,9 @@ public class GameManager : MonoBehaviour
     }
 
     mPlayer[0].transform.position = new Vector3(0.0f, 0.5f, 0.0f);
-    mPlayer[1].transform.position = new Vector3(0.0f, 0.5f, 0.0f);
     mPlayer[0].enabled = true;
-    mPlayer[1].enabled = true;
+    mPlayer[1].transform.position = new Vector3(0.0f, 0.5f, 0.0f);
+    
     mNextSpawn = TimeBetweenSpawns;
 
     mState = State.Playing;

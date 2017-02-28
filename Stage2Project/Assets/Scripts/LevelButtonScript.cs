@@ -18,7 +18,10 @@ public class LevelButtonScript : MonoBehaviour
   [SerializeField]
   private Image thumbnailImage;
 
-  public string levelName;
+  [SerializeField]
+  private string levelName;
+  [SerializeField]
+  private string levelPathPrefix = "Scenes/Levels/Tutorial/";
 
   public delegate void GameEvent();
   public static event GameEvent OnLevelChange;
@@ -30,6 +33,15 @@ public class LevelButtonScript : MonoBehaviour
     OnLevelChange += Desselect;
   }
 
+  public string GetFullLevelName()
+  {
+    return levelPathPrefix + levelName;
+  }
+
+  public string GetLevelName()
+  {
+    return levelName;
+  }
 
   public LevelButtonScript GetNextLevel()
   {
@@ -40,16 +52,23 @@ public class LevelButtonScript : MonoBehaviour
   {
     if (SelectedButtonScript == this)
     {
-      nextLevel.gameObject.SetActive(true);
+      if (nextLevel)
+      {
+        nextLevel.gameObject.SetActive(true);
+      }
     }
+   
   }
 
   public void Select()
   {
-    OnLevelChange();
-    highlightImage.enabled = true;
+
+
+    print(highlightImage.enabled + " is highlight image enabled");
     SelectedButtonScript = this;
     thumbnailImage.sprite = thumbnail;
+    OnLevelChange();
+    highlightImage.enabled = true;
   }
 
   public void Desselect()

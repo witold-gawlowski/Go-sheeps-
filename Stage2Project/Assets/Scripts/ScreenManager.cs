@@ -44,7 +44,6 @@ public class ScreenManager : MonoBehaviour
 
 
 
-
   public void StartGame()
   {
     if (OnNewGame != null)
@@ -71,7 +70,7 @@ public class ScreenManager : MonoBehaviour
       OnExitGame();
     }
     TransitionTo(Screens.ResultScreen);
-    SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.levelName);
+    SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.GetFullLevelName());
     SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
 
   }
