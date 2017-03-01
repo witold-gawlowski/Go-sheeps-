@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
     playerStart = GameObject.FindGameObjectWithTag("PlayerStart");
     mPlayer = new Player[2];
     mPlayer[0] = Instantiate(PlayerPrefab);
-    mPlayer[0].transform.position = new Vector3(playerStart.transform.position.x, 0f, playerStart.transform.position.z);
+    mPlayer[0].transform.position = new Vector3(playerStart.transform.position.x, 0.5f, playerStart.transform.position.z);
     mPlayer[0].playerID = 1;
     mPlayer[0].transform.parent = transform;
 
     mPlayer[1] = Instantiate(PlayerPrefab);
-    mPlayer[1].transform.position = new Vector3(playerStart.transform.position.x+1.5f, 0f, playerStart.transform.position.z);
+    mPlayer[1].transform.position = new Vector3(playerStart.transform.position.x+1.5f, 0.5f, playerStart.transform.position.z);
     mPlayer[1].playerID = 2;
     mPlayer[1].transform.parent = transform;
 
