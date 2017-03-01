@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
     mState = State.Paused;
     if (LevelsManager.PlayerNumber == 2)
     {
-      print("two" + LevelsManager.PlayerNumber);
       mPlayer[1].gameObject.SetActive(true);
     }
     else

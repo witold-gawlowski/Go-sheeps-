@@ -29,7 +29,7 @@ public class LevelButtonScript : MonoBehaviour
 
   public void Start()
   {
-    ScreenManager.OnLevelComplete += Complete;
+    ScreenManager.OnLevelComplete += LevelComplete;
     OnLevelChange += Desselect;
   }
 
@@ -48,9 +48,10 @@ public class LevelButtonScript : MonoBehaviour
     return nextLevel;
   }
 
-  public void Complete(float ignore)
+  public void LevelComplete(float ignore, LevelButtonScript levelButton)
   {
-    if (SelectedButtonScript == this)
+    print(levelButton.name + " " + this.name);
+    if (levelButton == this)
     {
       if (nextLevel)
       {

@@ -21,6 +21,11 @@ public class FurShaver : MonoBehaviour
     } 
   }
 
+  void Start()
+  {
+    _BallsOfYarn = 0;
+  }
+
   void OnValidate()
   {
     if (!farmTypeImage)

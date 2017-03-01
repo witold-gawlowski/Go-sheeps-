@@ -14,6 +14,7 @@ public class GameScreenManager : MonoBehaviour {
   [SerializeField]
   private Text timeText;
 
+  private bool levelComplete;
   private float counter;
 
   public static void ChangeWool(int total)
@@ -38,6 +39,7 @@ public class GameScreenManager : MonoBehaviour {
   {
     counter = 0;
     UpdateWoolText(0);
+    levelComplete = false;
   }
   void Update()
   {
@@ -47,9 +49,9 @@ public class GameScreenManager : MonoBehaviour {
 
   void CheckWinningCondition(int total)
   {
-    if (total >= GameManager.GetCurrentTargetWool())
+    if (total >= GameManager.GetCurrentTargetWool() && ! levelComplete)
     {
-      FurShaver.BallsOfYarn = 0;
+      levelComplete = true;
       ScreenManager screenManager = GetComponentInParent<ScreenManager>();
       screenManager.EndGame();
       screenManager.LevelComplete(counter);

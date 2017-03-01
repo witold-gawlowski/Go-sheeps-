@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
-  public delegate void LevelCompleteEvent(float duration);
+  public delegate void LevelCompleteEvent(float duration, LevelButtonScript levelButton);
   public delegate void GameEvent();
   public static event GameEvent OnNewGame;
   public static event GameEvent OnExitGame;
@@ -17,6 +17,9 @@ public class ScreenManager : MonoBehaviour
 
   private Canvas[] mScreens;
   private Screens mCurrentScreen;
+
+  [SerializeField]
+  private Animator cloudAnimator;
 
   void Awake()
   {
@@ -40,6 +43,7 @@ public class ScreenManager : MonoBehaviour
     }
 
     mCurrentScreen = Screens.TitleScreen;
+    transitionFromGame = false;
   }
 
   public void Update()
@@ -81,8 +85,11 @@ public class ScreenManager : MonoBehaviour
 
   public void LevelComplete(float completionTime)
   {
-    OnLevelComplete(completionTime);
+    OnLevelComplete(completionTime, LevelButtonScript.SelectedButtonScript);
   }
+
+  private bool transitionFromGame;
+  private LevelButtonScript lastLevel;
 
   public void EndGame()
   {
@@ -90,10 +97,9 @@ public class ScreenManager : MonoBehaviour
     {
       OnExitGame();
     }
-    TransitionTo(Screens.ResultScreen);
-    SceneManager.UnloadSceneAsync(LevelButtonScript.SelectedButtonScript.GetFullLevelName());
-    SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
+    transitionFromGame = true;
 
+    TransitionTo(Screens.ResultScreen);
   }
 
   public void GoToLevelSelection()
@@ -109,15 +115,39 @@ public class ScreenManager : MonoBehaviour
   public void GoToMainMenu()
   {
     TransitionTo(Screens.TitleScreen);
-    //SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
+  }
+
+  void UnloadGameScenes()
+  {
+    for(int i=0;i<SceneManager.sceneCount; i++)
+    {
+      Scene scene = SceneManager.GetSceneAt(i);
+      if(scene.name != "Load" && scene.name != "UI")
+      {
+        print("unload " + scene.name);
+        SceneManager.UnloadSceneAsync(scene.name);
+      }
+    }
+  }
+
+  private Screens tempScreen;
+  public void MakeTransition()
+  {
+    mScreens[(int)mCurrentScreen].enabled = false;
+    mScreens[(int)tempScreen].enabled = true;
+    mCurrentScreen = tempScreen;
+    if (transitionFromGame)
+    {
+      UnloadGameScenes();
+      SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
+      transitionFromGame = false;
+    }
   }
 
   private void TransitionTo(Screens screen)
   {
-    mScreens[(int)mCurrentScreen].enabled = false;
-    mScreens[(int)screen].enabled = true;
-    mCurrentScreen = screen;
+    tempScreen = screen;
+    cloudAnimator.SetTrigger("ChangeScreen");
   }
-
 
 }

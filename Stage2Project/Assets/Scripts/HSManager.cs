@@ -25,7 +25,7 @@ public class HSManager : MonoBehaviour
     LevelButtonScript.OnLevelChange += DisplayScore;
   }
 
-  public void HandleScores(float completionTime)
+  public void HandleScores(float completionTime, LevelButtonScript ignore)
   {
     StartCoroutine(PostScores(playerName.text, completionTime, LevelButtonScript.SelectedButtonScript.GetLevelName()));
   }

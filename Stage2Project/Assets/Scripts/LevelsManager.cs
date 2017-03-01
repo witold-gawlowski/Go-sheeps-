@@ -111,12 +111,11 @@ public class LevelsManager : MonoBehaviour
 
   }
 
-  public void LevelComplete(float ignore)
+  public void LevelComplete(float ignore, LevelButtonScript levelButton)
   {
-    LevelButtonScript.SelectedButtonScript.Complete(0.0f);
-    if(LevelButtonScript.SelectedButtonScript.GetLevelName() == PlayerPrefs.GetString("ReachedLevel"))
+    if(levelButton.GetLevelName() == PlayerPrefs.GetString("ReachedLevel"))
     {
-      LevelButtonScript nextLevelButton = LevelButtonScript.SelectedButtonScript.GetNextLevel();
+      LevelButtonScript nextLevelButton = levelButton.GetNextLevel();
       if (nextLevelButton) {
         PlayerPrefs.SetString("ReachedLevel", nextLevelButton.GetLevelName());
       }
