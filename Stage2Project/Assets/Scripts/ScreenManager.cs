@@ -42,7 +42,23 @@ public class ScreenManager : MonoBehaviour
     mCurrentScreen = Screens.TitleScreen;
   }
 
-
+  public void Update()
+  {
+    if (Input.GetButtonDown("escape"))
+    {
+      if (mCurrentScreen == Screens.TitleScreen)
+      {
+        Application.Quit();
+      }
+      else if(mCurrentScreen == Screens.GameScreen)
+      {
+        EndGame();
+      }else
+      {
+        GoToMainMenu();
+      }
+    }
+  }
 
   public void StartGame()
   {

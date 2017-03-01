@@ -27,7 +27,7 @@ public class HSManager : MonoBehaviour
 
   public void HandleScores(float completionTime)
   {
-    StartCoroutine(PostScores(playerName.text, (int)completionTime, LevelButtonScript.SelectedButtonScript.GetLevelName()));
+    StartCoroutine(PostScores(playerName.text, completionTime, LevelButtonScript.SelectedButtonScript.GetLevelName()));
   }
 
   public void DisplayScore()
@@ -37,7 +37,7 @@ public class HSManager : MonoBehaviour
 
 
     // remember to use StartCoroutine when calling this function!
-  IEnumerator PostScores(string name, int score, string levelName)
+  IEnumerator PostScores(string name, float score, string levelName)
   {
     //This connects to a server side php script that will add the name and score to a MySQL DB.
     // Supply it with a string representing the players name and the players score.
