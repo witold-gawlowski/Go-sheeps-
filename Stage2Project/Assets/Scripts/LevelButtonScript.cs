@@ -55,6 +55,7 @@ public class LevelButtonScript : MonoBehaviour
       if (nextLevel)
       {
         nextLevel.gameObject.SetActive(true);
+        nextLevel.Select();
       }
     }
    

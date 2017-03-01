@@ -136,7 +136,6 @@ public class FlockWithGroup : MonoBehaviour
       {
         if (mCurrentBuddies[count] == null)
         {
-          print("null element");
           break;
         }
         Rigidbody body = mCurrentBuddies[count].GetComponent<Rigidbody>();

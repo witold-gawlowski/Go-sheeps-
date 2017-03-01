@@ -42,7 +42,7 @@ public class GameScreenManager : MonoBehaviour {
   void Update()
   {
     counter += Time.deltaTime;
-    timeText.text = ((int)counter).ToString() + "s";
+    timeText.text = counter.ToString("0.00") + "s";
   }
 
   void CheckWinningCondition(int total)
