@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(Rigidbody))]
 public class FlockWithGroup : MonoBehaviour
@@ -38,9 +39,8 @@ public class FlockWithGroup : MonoBehaviour
   private Rigidbody mBody;
   private float mCountDownToCheck;
   private GroupTag groupTag;
-  public int cohesionCount;
-  //delete me.
-  public int buddyCount;
+  private int cohesionCount;
+  private int buddyCount;
   public bool isOnGrass;
 
 
@@ -112,6 +112,7 @@ public class FlockWithGroup : MonoBehaviour
         }
       }
     }
+    mCurrentBuddies = mCurrentBuddies.Where(x => x != null).ToList();
     //for (int count = 0; count < mCurrentBuddies.Count; ++count)
     //{
     //  Debug.DrawLine(transform.position, mCurrentBuddies[count].transform.position, Color.cyan, CheckForBuddiesInterval);
@@ -120,6 +121,7 @@ public class FlockWithGroup : MonoBehaviour
 
   private void FlockWithBuddies()
   {
+    cohesionCount = 0;
     if (mCurrentBuddies.Count > 0)
     {
       Vector3 align = Vector3.zero;
@@ -129,12 +131,12 @@ public class FlockWithGroup : MonoBehaviour
       Vector3 separation = Vector3.zero;
 
       int avoidCount = 0;
-      cohesionCount = 0;
 
       for (int count = 0; count < mCurrentBuddies.Count; ++count)
       {
         if (mCurrentBuddies[count] == null)
         {
+          print("null element");
           break;
         }
         Rigidbody body = mCurrentBuddies[count].GetComponent<Rigidbody>();

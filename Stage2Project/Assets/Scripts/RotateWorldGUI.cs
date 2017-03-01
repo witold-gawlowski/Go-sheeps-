@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotateWorldGUI : MonoBehaviour {
   void Start()
   {
-    transform.transform.up = Camera.main.transform.up;
+    Camera camera = GameObject.FindGameObjectWithTag("LevelPrefab").GetComponentInChildren<Camera>();
+    transform.transform.up = camera.transform.up;
   }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Sheep
   - SheepParent
   - PlayerStart
+  - LevelPrefab
   layers:
   - Default
   - TransparentFX

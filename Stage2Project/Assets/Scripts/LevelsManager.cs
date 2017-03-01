@@ -15,6 +15,9 @@ public class LevelsManager : MonoBehaviour
   [SerializeField]
   private InputField playerNameField;
 
+  [SerializeField]
+  private Text levelName;
+
   public List<LevelButtonScript> levels;
 
   public static int PlayerNumber;
@@ -36,6 +39,11 @@ public class LevelsManager : MonoBehaviour
         return;
       }
     }
+  }
+
+  public void UpdateLevelName()
+  {
+    levelName.text = LevelButtonScript.SelectedButtonScript.GetLevelName();
   }
 
   public void SaveName()
@@ -79,6 +87,7 @@ public class LevelsManager : MonoBehaviour
     }
     SceneManager.LoadSceneAsync(LevelButtonScript.SelectedButtonScript.GetFullLevelName(), LoadSceneMode.Additive);
   }
+
   public void StartGame()
   {
     AsyncOperation op = SceneManager.UnloadSceneAsync("Scenes/Levels/BackgroundLevel");
@@ -90,6 +99,8 @@ public class LevelsManager : MonoBehaviour
     //print(PlayerPrefs.GetString("ReachedLevel") + " = reached level");
     levels = new List<LevelButtonScript>();
     RegisterLevels();
+    ScreenManager.OnLevelComplete += LevelComplete;
+    LevelButtonScript.OnLevelChange += UpdateLevelName;
     levels[0].Select();
     LoadSavedLevelState();
     string playerName = PlayerPrefs.GetString("PlayerName");
@@ -97,7 +108,7 @@ public class LevelsManager : MonoBehaviour
     if (playerName != "") {
       playerNameField.text = playerName;
     }
-    ScreenManager.OnLevelComplete += LevelComplete;
+
   }
 
   public void LevelComplete(float ignore)

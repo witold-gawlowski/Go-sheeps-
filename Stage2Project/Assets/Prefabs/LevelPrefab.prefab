@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4010657936069248}
   m_Layer: 0
   m_Name: LevelPrefab
-  m_TagString: Untagged
+  m_TagString: LevelPrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 1748682220627742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.482629, y: 1, z: 9.986103}
+  m_LocalScale: {x: 17.753073, y: 1, z: 9.986103}
   m_Children: []
   m_Father: {fileID: 4010657936069248}
   m_RootOrder: 1
@@ -650,7 +650,7 @@ MonoBehaviour:
   Arena: {fileID: 114797204937818614}
   TimeBetweenSpawns: 1
   BlackSheepFraction: 0.2
-  targetWool: 8
+  targetWool: 10
 --- !u!114 &114797204937818614
 MonoBehaviour:
   m_ObjectHideFlags: 1
