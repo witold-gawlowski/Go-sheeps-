@@ -387,18 +387,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60fd5966a0fec348bda510bfc03b59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuddyDistance: 10
+  BuddyDistance: 7
   AvoidDistance: 7
   CheckForBuddiesInterval: 1
-  cohesionCoefficient: 5000
+  cohesionCoefficient: 4500
   avoidCoefficient: 6000
   allignCoefficient: 1200
   separationCoefficient: 0
   forwardDrive: 35
   maxForceMag: 2000
   cohesionForceProportionalToDistance: 1
-  cohesionCount: 0
-  buddyCount: 0
   isOnGrass: 0
 --- !u!114 &114984725727161362
 MonoBehaviour:
@@ -411,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20a66703e7e08448a1cd80f43dc001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
 --- !u!135 &135279669381996902
 SphereCollider:
   m_ObjectHideFlags: 1

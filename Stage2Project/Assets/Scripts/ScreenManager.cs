@@ -13,7 +13,7 @@ public class ScreenManager : MonoBehaviour
   public static event LevelCompleteEvent OnLevelComplete;
 
 
-  public enum Screens { TitleScreen, GameScreen, ResultScreen, InstructionsScreen, NumScreens }
+  public enum Screens { TitleScreen, GameScreen, ResultScreen, InstructionsScreen, CreditsScreen, NumScreens }
 
   private Canvas[] mScreens;
   private Screens mCurrentScreen;
@@ -56,6 +56,11 @@ public class ScreenManager : MonoBehaviour
   public void ViewInstructions()
   {
     TransitionTo(Screens.InstructionsScreen);
+  }
+
+  public void ViewCredits()
+  {
+    TransitionTo(Screens.CreditsScreen);
   }
 
   public void LevelComplete(float completionTime)
