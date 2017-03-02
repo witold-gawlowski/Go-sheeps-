@@ -7,7 +7,7 @@ public class CloudScript : MonoBehaviour {
   float counter;
   void Start()
   {
-    counter = Random.RandomRange(20, 30); ;
+    counter = Random.Range(20, 30); ;
   }
 
   void Update()
@@ -15,7 +15,7 @@ public class CloudScript : MonoBehaviour {
     counter -= Time.deltaTime;
     if(counter < 0)
     {
-      counter = Random.RandomRange(20, 30);
+      counter = Random.Range(20, 30);
       cloudAnimator.SetTrigger("TriggerCloud");
     }
   }

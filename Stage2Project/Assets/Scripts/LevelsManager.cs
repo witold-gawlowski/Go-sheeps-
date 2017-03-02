@@ -41,6 +41,11 @@ public class LevelsManager : MonoBehaviour
     }
   }
 
+  public void Awake()
+  {
+    OnSliderChange();
+  }
+
   public void UpdateLevelName()
   {
     levelName.text = LevelButtonScript.SelectedButtonScript.GetLevelName();
@@ -49,7 +54,6 @@ public class LevelsManager : MonoBehaviour
   public void SaveName()
   {
     PlayerPrefs.SetString("PlayerName", playerNameField.text);
-    print("save name" + PlayerPrefs.GetString("PlayerName"));
   }
 
   void LoadSavedLevelState()
