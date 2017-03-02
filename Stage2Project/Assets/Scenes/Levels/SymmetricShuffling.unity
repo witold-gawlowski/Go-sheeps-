@@ -2727,7 +2727,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
       propertyPath: m_LocalScale.x
-      value: 21.110249
+      value: 17.591873
       objectReference: {fileID: 0}
     - target: {fileID: 64148433582540850, guid: 766d512ee0eae3141b73d21ff29d6ef2,
         type: 2}
@@ -2759,7 +2759,7 @@ Prefab:
     - target: {fileID: 114602649155593434, guid: 766d512ee0eae3141b73d21ff29d6ef2,
         type: 2}
       propertyPath: targetWool
-      value: 200
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}

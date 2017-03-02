@@ -4069,7 +4069,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 964425790}
-        m_MethodName: ClearPlayerPrefs
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5381,12 +5381,12 @@ Prefab:
     - target: {fileID: 224563192052311702, guid: 7a5ebe1a2529a2a4486613052ea000f3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -191.2
+      value: -180.7
       objectReference: {fileID: 0}
     - target: {fileID: 224563192052311702, guid: 7a5ebe1a2529a2a4486613052ea000f3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -57.3
+      value: -47
       objectReference: {fileID: 0}
     - target: {fileID: 224563192052311702, guid: 7a5ebe1a2529a2a4486613052ea000f3,
         type: 2}
@@ -8736,7 +8736,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Elio de Berardinis \nGrzegorz Guspiel \nPierre Turle \n\n\n"
+  m_Text: "Elio de Berardinis\nRobert Doig\nGrzegorz Guspiel \nLuke Sanderson\nPierre
+    Turle\nNikita Veselov\n\n\n"
 --- !u!114 &1919081189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8750,9 +8751,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 70
+  m_MinHeight: 127.2
   m_PreferredWidth: -1
-  m_PreferredHeight: 70
+  m_PreferredHeight: 129.1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
 --- !u!222 &1919081190

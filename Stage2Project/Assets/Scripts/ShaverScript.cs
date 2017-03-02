@@ -23,7 +23,7 @@ public class ShaverScript : MonoBehaviour
 
   void Start()
   {
-    _BallsOfYarn = 0;
+    BallsOfYarn = 0;
   }
 
   void OnValidate()
