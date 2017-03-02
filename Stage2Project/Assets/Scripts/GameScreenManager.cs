@@ -30,10 +30,6 @@ public class GameScreenManager : MonoBehaviour {
     OnWoolChange += CheckWinningCondition;
     ScreenManager.OnNewGame += NewRound;
   }
-  void Start()
-  {
-    PlayerAndTargetWoolManager.GameManagerInitializedEvent += NewRound;
-  }
   
   void NewRound()
   {

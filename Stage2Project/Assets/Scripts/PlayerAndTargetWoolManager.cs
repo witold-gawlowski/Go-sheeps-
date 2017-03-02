@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerAndTargetWoolManager : MonoBehaviour
 {
-  public delegate void GameEvent();
-  public static event GameEvent GameManagerInitializedEvent;
-
   [SerializeField]
   private Player PlayerPrefab;
 
@@ -52,7 +49,6 @@ public class PlayerAndTargetWoolManager : MonoBehaviour
     {
       mPlayer[1].gameObject.SetActive(false);
     }
-    GameManagerInitializedEvent();
   }
 
   public static int GetCurrentTargetWool()
