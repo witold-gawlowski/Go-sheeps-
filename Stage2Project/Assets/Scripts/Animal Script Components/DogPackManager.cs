@@ -21,6 +21,15 @@ public class DogPackManager : MonoBehaviour
     UpdateShepards();
   }
 
+  void OnDestroy()
+  {
+    for(int i=0; i< shepards.Count; i++)
+    {
+      Destroy(shepards[i].gameObject);
+    }
+    shepards.Clear();
+  }
+
   public int GetPackSize()
   {
     return shepards.Count;

@@ -285,8 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 0
-  speedLimitingFactor: 300
+  MaxSpeed: 0.5
+  speedLimitingFactor: 400
 --- !u!114 &114611092410105980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForceCoefficient: 300000
   forceCap: 3000
-  MinimumDistance: 20
+  MinimumDistance: 15
   MagnetizeType: 1
 --- !u!114 &114665008357904544
 MonoBehaviour:
