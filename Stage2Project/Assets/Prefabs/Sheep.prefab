@@ -318,7 +318,7 @@ MonoBehaviour:
   lambDuration: 15
   growDuration: 0.3
   initialSize: 0.7
-  maxBreedingBuddyCount: 6
+  maxBreedingBuddyCount: 13
   minBreedingBuddyCount: 1
   sheepParent: {fileID: 0}
 --- !u!114 &114682315256986722
@@ -336,7 +336,6 @@ MonoBehaviour:
   grownFurWidth: 1
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
-  altFullHairMaterial: {fileID: 0}
   furGrowthDuration: 20
   grassFurGrowthSpeedMultiplier: 2
   furColor: 0
@@ -397,7 +396,6 @@ MonoBehaviour:
   forwardDrive: 35
   maxForceMag: 2000
   cohesionForceProportionalToDistance: 1
-  mCurrentBuddies: []
   isOnGrass: 0
 --- !u!114 &114984725727161362
 MonoBehaviour:
