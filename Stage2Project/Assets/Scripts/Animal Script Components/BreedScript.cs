@@ -22,7 +22,7 @@ public class BreedScript : MonoBehaviour
   private int maxBreedingBuddyCount = 6;
 
   [SerializeField]
-  private int minBreedingBuddyCount = 2; // ;)
+  private int minBreedingBuddyCount = 2;
 
   private FlockWithGroup flockScript;
   private GroupTag groupTag;

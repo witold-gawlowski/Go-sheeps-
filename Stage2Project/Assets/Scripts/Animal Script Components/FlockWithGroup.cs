@@ -35,7 +35,7 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private bool cohesionForceProportionalToDistance = true;
 
-  private List<GroupTag> mCurrentBuddies;
+  public List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
   private float mCountDownToCheck;
   private GroupTag groupTag;
@@ -96,7 +96,7 @@ public class FlockWithGroup : MonoBehaviour
 
     for (int count = 0; count < individuals.Length; ++count)
     {
-      if (individuals[count].gameObject != gameObject)
+      if (individuals[count].gameObject != gameObject && individuals[count].tag != "Player")
       {
         Vector3 difference = WrapPosition.WrapDifference(individuals[count].transform.position, transform.position);
         if (difference.magnitude <= BuddyDistance)

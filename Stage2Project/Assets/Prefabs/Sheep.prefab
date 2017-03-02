@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3673faac0bfb1274ab460b4e514d887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardBreedChancePerFrame: 0.00003
+  standardBreedChancePerFrame: 0.00004
   grassBreedChancePerFrame: 0.001
   lambDuration: 15
   growDuration: 0.3
@@ -397,6 +397,7 @@ MonoBehaviour:
   forwardDrive: 35
   maxForceMag: 2000
   cohesionForceProportionalToDistance: 1
+  mCurrentBuddies: []
   isOnGrass: 0
 --- !u!114 &114984725727161362
 MonoBehaviour:
