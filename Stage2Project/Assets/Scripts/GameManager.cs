@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
   {
     Arena.Calculate();
 
-    if (LevelsManager.PlayerNumber == 2)
+    if (WorldMapScreenManager.PlayerNumber == 2)
     {
       mPlayer[1].gameObject.SetActive(true);
     }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-//I was using theee resources while making highscores:
+//I was using these resources while implementing highscores:
 //http://wiki.unity3d.com/index.php?title=Server_Side_Highscores
 //https://www.scirra.com/tutorials/4839/creating-your-own-leaderboard-highscores-easy-and-free-php-mysql/page-1
 

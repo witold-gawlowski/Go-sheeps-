@@ -27,23 +27,25 @@ public class WorldMapScreenManager : MonoBehaviour
     PlayerNumber = (int)playerNumberSlider.value;
   }
 
-  void RegisterLevels()
-  {
-    LevelButtonScript nextLevelButton = firstLevel;
-    while (true)
-    {
-      levels.Add(nextLevelButton);
-      nextLevelButton = nextLevelButton.GetNextLevel();
-      if (nextLevelButton == null)
-      {
-        return;
-      }
-    }
-  }
-
   public void Awake()
   {
     OnSliderChange();
+  }
+
+  void Start()
+  {
+    ScreenManager.OnLevelComplete += UnlockNewLevel;
+    LevelButtonScript.OnLevelChange += UpdateLevelName;
+
+    firstLevel.Select();
+    LoadSavedLevelState();
+    string playerName = PlayerPrefs.GetString("PlayerName");
+
+    if (playerName != "")
+    {
+      playerNameField.text = playerName;
+    }
+
   }
 
   public void UpdateLevelName()
@@ -60,12 +62,14 @@ public class WorldMapScreenManager : MonoBehaviour
   {
     string reachedLevel = PlayerPrefs.GetString("ReachedLevel");
     LevelButtonScript currentLevel = LevelButtonScript.GetSelectedButtonScript();
+
     if (reachedLevel == "")
     {
       PlayerPrefs.SetString("ReachedLevel", currentLevel.GetLevelName());
       return;
     }
-    while (true)
+
+    while (currentLevel != null)
     {
       currentLevel.gameObject.SetActive(true);
       string currentLevelName = currentLevel.GetLevelName();
@@ -73,17 +77,11 @@ public class WorldMapScreenManager : MonoBehaviour
       {
         return;
       }
-      currentLevel = currentLevel.GetNextLevel();
-      if (currentLevel == null)
-      {
-        print("exit " + currentLevelName);
-        return;
-      }
-      
+      currentLevel = currentLevel.GetNextLevel();      
     }
   }
 
-  IEnumerator LoadSceneOnUnload(AsyncOperation op)
+  IEnumerator LoadSceneOnUnloadOld(AsyncOperation op)
   {
     while (!op.isDone)
     {
@@ -95,31 +93,16 @@ public class WorldMapScreenManager : MonoBehaviour
   public void StartGame()
   {
     AsyncOperation op = SceneManager.UnloadSceneAsync("Scenes/Levels/BackgroundLevel");
-    StartCoroutine(LoadSceneOnUnload(op));
+    StartCoroutine(LoadSceneOnUnloadOld(op));
   }
 
-  void Start()
-  {
-    //print(PlayerPrefs.GetString("ReachedLevel") + " = reached level");
-    levels = new List<LevelButtonScript>();
-    RegisterLevels();
-    ScreenManager.OnLevelComplete += LevelComplete;
-    LevelButtonScript.OnLevelChange += UpdateLevelName;
-    levels[0].Select();
-    LoadSavedLevelState();
-    string playerName = PlayerPrefs.GetString("PlayerName");
-   
-    if (playerName != "") {
-      playerNameField.text = playerName;
-    }
 
-  }
 
-  public void LevelComplete(float ignore, LevelButtonScript levelButton)
+  public void UnlockNewLevel(float ignore, LevelButtonScript finishedLevelButton)
   {
-    if(levelButton.GetLevelName() == PlayerPrefs.GetString("ReachedLevel"))
+    if(finishedLevelButton.GetLevelName() == PlayerPrefs.GetString("ReachedLevel"))
     {
-      LevelButtonScript nextLevelButton = levelButton.GetNextLevel();
+      LevelButtonScript nextLevelButton = finishedLevelButton.GetNextLevel();
       if (nextLevelButton) {
         PlayerPrefs.SetString("ReachedLevel", nextLevelButton.GetLevelName());
       }

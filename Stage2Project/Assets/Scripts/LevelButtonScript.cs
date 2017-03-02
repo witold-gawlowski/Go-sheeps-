@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class LevelButtonScript : MonoBehaviour
 {
+  public delegate void GameEvent();
+  public static event GameEvent OnLevelChange;
+
   [SerializeField]
   private LevelButtonScript nextLevel;
 
@@ -24,8 +27,6 @@ public class LevelButtonScript : MonoBehaviour
   [SerializeField]
   private string levelPathPrefix = "Scenes/Levels/Tutorial/";
 
-  public delegate void GameEvent();
-  public static event GameEvent OnLevelChange;
   private static LevelButtonScript selectedButtonScript;
 
   public static LevelButtonScript GetSelectedButtonScript()
@@ -35,7 +36,7 @@ public class LevelButtonScript : MonoBehaviour
 
   public void Start()
   {
-    ScreenManager.OnLevelComplete += LevelComplete;
+    ScreenManager.OnLevelComplete += LevelCompleteHandler;
     OnLevelChange += Desselect;
   }
 
@@ -54,7 +55,7 @@ public class LevelButtonScript : MonoBehaviour
     return nextLevel;
   }
 
-  public void LevelComplete(float ignore, LevelButtonScript levelButton)
+  public void LevelCompleteHandler(float time, LevelButtonScript levelButton)
   {
     if (levelButton == this)
     {
@@ -71,6 +72,7 @@ public class LevelButtonScript : MonoBehaviour
   {
     selectedButtonScript = this;
     thumbnailImage.sprite = thumbnail;
+
     OnLevelChange();
     highlightImage.enabled = true;
   }
