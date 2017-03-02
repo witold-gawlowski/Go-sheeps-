@@ -23,7 +23,7 @@ public class HeadTowardsVelocity : MonoBehaviour
   {
     if (mBody.velocity.magnitude > minimumVelocity)
     {
-      transform.forward += mBody.velocity.normalized * turnSpeed;//* Mathf.Pow(mBody.velocity.magnitude, 1);
+      transform.forward += mBody.velocity.normalized * turnSpeed;
     }
   }
 }

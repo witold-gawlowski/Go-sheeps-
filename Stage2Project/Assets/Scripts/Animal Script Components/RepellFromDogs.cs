@@ -50,9 +50,8 @@ public class RepellFromDogs : MonoBehaviour
         }
         else
         {
-          mBody.AddForce(-playerToBoid.normalized * ForceCoefficient * Time.deltaTime);
+          throw new System.Exception("not supported");
         }
-       
       }
     }
   }

@@ -117,7 +117,7 @@ public class ScreenManager : MonoBehaviour
     TransitionTo(Screens.TitleScreen);
   }
 
-  void UnloadGameScenes()
+  void UnloadGameScreen()
   {
     for(int i=0;i<SceneManager.sceneCount; i++)
     {
@@ -130,6 +130,7 @@ public class ScreenManager : MonoBehaviour
   }
 
   private Screens tempScreen;
+
   public void MakeTransition()
   {
     mScreens[(int)mCurrentScreen].enabled = false;
@@ -137,7 +138,7 @@ public class ScreenManager : MonoBehaviour
     mCurrentScreen = tempScreen;
     if (transitionFromGame)
     {
-      UnloadGameScenes();
+      UnloadGameScreen();
       SceneManager.LoadSceneAsync("Scenes/Levels/BackgroundLevel", LoadSceneMode.Additive);
       transitionFromGame = false;
     }

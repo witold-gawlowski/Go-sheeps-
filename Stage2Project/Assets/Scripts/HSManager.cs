@@ -73,7 +73,7 @@ public class HSManager : MonoBehaviour
   [SerializeField]
   private Text highscoresText;
 
-  private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
+  //private string secretKey = "mySecretKey"; // Edit this value and make sure it's the same as the one stored on the server
   public string addScoreURL = "https://sheeps-searchforastar.000webhostapp.com/addscore.php"; //be sure to add a ? to your url
   public string highscoreURL = "https://sheeps-searchforastar.000webhostapp.com/display.php";
 

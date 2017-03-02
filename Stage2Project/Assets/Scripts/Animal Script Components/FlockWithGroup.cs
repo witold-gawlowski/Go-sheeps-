@@ -35,12 +35,11 @@ public class FlockWithGroup : MonoBehaviour
   [SerializeField]
   private bool cohesionForceProportionalToDistance = true;
 
-  public List<GroupTag> mCurrentBuddies;
+  private List<GroupTag> mCurrentBuddies;
   private Rigidbody mBody;
   private float mCountDownToCheck;
   private GroupTag groupTag;
   private int cohesionCount;
-  private int buddyCount;
   public bool isOnGrass;
 
 
@@ -67,7 +66,6 @@ public class FlockWithGroup : MonoBehaviour
     {
       mBody.AddForce(transform.forward * forwardDrive);
     }
-    buddyCount = mCurrentBuddies.Count;
   }
 
   public void EnterGrass()
@@ -113,10 +111,6 @@ public class FlockWithGroup : MonoBehaviour
       }
     }
     mCurrentBuddies = mCurrentBuddies.Where(x => x != null).ToList();
-    //for (int count = 0; count < mCurrentBuddies.Count; ++count)
-    //{
-    //  Debug.DrawLine(transform.position, mCurrentBuddies[count].transform.position, Color.cyan, CheckForBuddiesInterval);
-    //}
   }
 
   private void FlockWithBuddies()
@@ -127,10 +121,7 @@ public class FlockWithGroup : MonoBehaviour
       Vector3 align = Vector3.zero;
       Vector3 avoid = Vector3.zero;
       Vector3 cohesion = Vector3.zero;
-      //this force compomenet separates different breeds
       Vector3 separation = Vector3.zero;
-
-      int avoidCount = 0;
 
       for (int count = 0; count < mCurrentBuddies.Count; ++count)
       {
@@ -149,7 +140,6 @@ public class FlockWithGroup : MonoBehaviour
           cohesionCount++;
           if (mag < AvoidDistance)
           {
-            avoidCount++;
             avoid -= buddyToThis.normalized * (1 / (mag + 0.1f));
           }
         }
@@ -157,18 +147,10 @@ public class FlockWithGroup : MonoBehaviour
         {
           separation -= buddyToThis.normalized * (1 / (mag + 0.1f));
         }
-        
       }
 
-      /* Align now is an average velocity of a group.
-      *  we should be adding the difference beteween the average velocity and our velocity instead of 
-      *  average velocity.
-      */
       align = align/mCurrentBuddies.Count - mBody.velocity;
-      if (avoidCount > 0)
-      {
-        //avoid /= avoidCount;
-      }
+
       if (cohesionCount != 0)
       {
         cohesion /= cohesionCount;
@@ -177,24 +159,13 @@ public class FlockWithGroup : MonoBehaviour
       {
         cohesion = cohesion.normalized;
       }
-      //if (gameObject.name == "Shepherd")
-      //{
-      //  print("cohesion " + cohesion);
-      //  print("budides " + cohesionCount);
-      //}
-      //Debug.DrawLine(transform.position, transform.position+align*allignCoefficient/70, Color.blue);
-      //Debug.DrawLine(transform.position, transform.position + avoid * avoidCoefficient/70, Color.red);
-      //Debug.DrawLine(transform.position, transform.position + cohesion * cohesionCoefficient/70, Color.yellow);
-      //Debug.DrawLine(transform.position, transform.position + separation * separationCoefficient / 70, Color.magenta);
       Vector3 force = (align * allignCoefficient +
                        cohesion * cohesionCoefficient +
                        avoid * avoidCoefficient +
                        separation * separationCoefficient
       );
-
       force = Vector3.ClampMagnitude(force, maxForceMag);
       mBody.AddForce( force * Time.deltaTime);
     }
-   
   }
 }
