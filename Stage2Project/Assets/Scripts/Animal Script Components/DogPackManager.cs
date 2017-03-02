@@ -35,9 +35,9 @@ public class DogPackManager : MonoBehaviour
   //todo: move this code to balls of yarn.
   public void Purchase()
   {
-    if (CurrentShop && FurShaver.BallsOfYarn >= CurrentShop.GetPrice())
+    if (CurrentShop && ShaverScript.BallsOfYarn >= CurrentShop.GetPrice())
     {
-      FurShaver.BallsOfYarn -= CurrentShop.GetPrice();
+      ShaverScript.BallsOfYarn -= CurrentShop.GetPrice();
       GameObject shepardObject = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
       GroupTag groupTag = shepardObject.GetComponent<GroupTag>();
       groupTag.Affiliation = Affiliation;

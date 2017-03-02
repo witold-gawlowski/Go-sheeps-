@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerAndTargetWoolManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
   [SerializeField]
   private Player PlayerPrefab;

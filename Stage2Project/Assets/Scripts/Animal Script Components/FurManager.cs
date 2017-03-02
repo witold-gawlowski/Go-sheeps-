@@ -19,9 +19,6 @@ public class FurManager : MonoBehaviour
   private Material fullHairMaterial;
 
   [SerializeField]
-  private Material altFullHairMaterial;
-
-  [SerializeField]
   private float furGrowthDuration = 4.0f;
 
   [SerializeField]
@@ -29,17 +26,18 @@ public class FurManager : MonoBehaviour
 
   private int furState = 1;
   private MeshRenderer meshRenderer;
-  private Transform bodyTransform;
   private GroupTag groupTag;
   private HealthScript healthScript;
   private bool isOnGrass;
 
   [HideInInspector]
   public GroupTag.Group furColor;
+
   void Awake()
   {
     meshRenderer = GetComponent<MeshRenderer>();
     groupTag = GetComponentInParent<GroupTag>();
+
     furColor = groupTag.Affiliation;
     if (groupTag.Affiliation == GroupTag.Group.Shaved)
     {

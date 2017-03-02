@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelsManager : MonoBehaviour
+public class WorldMapScreenManager : MonoBehaviour
 {
   [SerializeField]
   private LevelButtonScript firstLevel;
@@ -48,7 +48,7 @@ public class LevelsManager : MonoBehaviour
 
   public void UpdateLevelName()
   {
-    levelName.text = LevelButtonScript.SelectedButtonScript.GetLevelName();
+    levelName.text = LevelButtonScript.GetSelectedButtonScript().GetLevelName();
   }
 
   public void SaveName()
@@ -59,7 +59,7 @@ public class LevelsManager : MonoBehaviour
   void LoadSavedLevelState()
   {
     string reachedLevel = PlayerPrefs.GetString("ReachedLevel");
-    LevelButtonScript currentLevel = LevelButtonScript.SelectedButtonScript;
+    LevelButtonScript currentLevel = LevelButtonScript.GetSelectedButtonScript();
     if (reachedLevel == "")
     {
       PlayerPrefs.SetString("ReachedLevel", currentLevel.GetLevelName());
@@ -89,7 +89,7 @@ public class LevelsManager : MonoBehaviour
     {
       yield return null;
     }
-    SceneManager.LoadSceneAsync(LevelButtonScript.SelectedButtonScript.GetFullLevelName(), LoadSceneMode.Additive);
+    SceneManager.LoadSceneAsync(LevelButtonScript.GetSelectedButtonScript().GetFullLevelName(), LoadSceneMode.Additive);
   }
 
   public void StartGame()

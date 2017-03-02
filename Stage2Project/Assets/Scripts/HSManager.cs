@@ -18,7 +18,7 @@ public class HSManager : MonoBehaviour
 
   void Start()
   {
-    StartCoroutine(GetScores(LevelButtonScript.SelectedButtonScript.GetLevelName()));
+    StartCoroutine(GetScores(LevelButtonScript.GetSelectedButtonScript().GetLevelName()));
     ScreenManager.OnLevelComplete += HandleScores;
     ScreenManager.OnExitGame += DisplayScore;
     ScreenManager.OnNewGame += DisplayScore;
@@ -27,12 +27,12 @@ public class HSManager : MonoBehaviour
 
   public void HandleScores(float completionTime, LevelButtonScript ignore)
   {
-    StartCoroutine(PostScores(playerName.text, completionTime, LevelButtonScript.SelectedButtonScript.GetLevelName()));
+    StartCoroutine(PostScores(playerName.text, completionTime, LevelButtonScript.GetSelectedButtonScript().GetLevelName()));
   }
 
   public void DisplayScore()
   {
-    StartCoroutine(GetScores(LevelButtonScript.SelectedButtonScript.GetLevelName()));
+    StartCoroutine(GetScores(LevelButtonScript.GetSelectedButtonScript().GetLevelName()));
   }
 
 

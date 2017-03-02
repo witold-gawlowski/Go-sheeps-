@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FurShaver : MonoBehaviour
+public class ShaverScript : MonoBehaviour
 {
   [SerializeField]
   private GroupTag.Group farmType = GroupTag.Group.Black;

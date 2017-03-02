@@ -48,7 +48,7 @@ public class GameScreenManager : MonoBehaviour {
 
   void CheckWinningCondition(int total)
   {
-    if (total >= PlayerAndTargetWoolManager.GetCurrentTargetWool() && ! levelComplete)
+    if (total >= GameManager.GetCurrentTargetWool() && ! levelComplete)
     {
       levelComplete = true;
       ScreenManager screenManager = GetComponentInParent<ScreenManager>();
@@ -60,6 +60,6 @@ public class GameScreenManager : MonoBehaviour {
 
   public void UpdateWoolText(int total)
   {
-    woolText.text = "x " + total.ToString() + "/" + PlayerAndTargetWoolManager.GetCurrentTargetWool();
+    woolText.text = "x " + total.ToString() + "/" + GameManager.GetCurrentTargetWool();
   }
 }

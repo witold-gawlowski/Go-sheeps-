@@ -85,7 +85,7 @@ public class ScreenManager : MonoBehaviour
 
   public void LevelComplete(float completionTime)
   {
-    OnLevelComplete(completionTime, LevelButtonScript.SelectedButtonScript);
+    OnLevelComplete(completionTime, LevelButtonScript.GetSelectedButtonScript());
   }
 
   private bool transitionFromGame;

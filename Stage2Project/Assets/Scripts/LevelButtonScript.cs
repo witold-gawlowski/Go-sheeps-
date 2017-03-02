@@ -20,12 +20,18 @@ public class LevelButtonScript : MonoBehaviour
 
   [SerializeField]
   private string levelName;
+
   [SerializeField]
   private string levelPathPrefix = "Scenes/Levels/Tutorial/";
 
   public delegate void GameEvent();
   public static event GameEvent OnLevelChange;
-  public static LevelButtonScript SelectedButtonScript;
+  private static LevelButtonScript selectedButtonScript;
+
+  public static LevelButtonScript GetSelectedButtonScript()
+  {
+    return selectedButtonScript;
+  }
 
   public void Start()
   {
@@ -63,7 +69,7 @@ public class LevelButtonScript : MonoBehaviour
 
   public void Select()
   {
-    SelectedButtonScript = this;
+    selectedButtonScript = this;
     thumbnailImage.sprite = thumbnail;
     OnLevelChange();
     highlightImage.enabled = true;
