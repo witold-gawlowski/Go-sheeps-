@@ -1631,35 +1631,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 224494658393928744, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.70541006
-      objectReference: {fileID: 0}
-    - target: {fileID: 224494658393928744, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.048955955
-      objectReference: {fileID: 0}
-    - target: {fileID: 224494658393928744, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.048955955
-      objectReference: {fileID: 0}
-    - target: {fileID: 224494658393928744, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.70541006
-      objectReference: {fileID: 0}
-    - target: {fileID: 224494658393928744, guid: 70d9258e43792434aa5f3724f608cf40,
-        type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -7.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 1636048442629410, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70d9258e43792434aa5f3724f608cf40, type: 2}
   m_IsPrefabParent: 0
@@ -1811,22 +1782,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4496068166659228, guid: 5c19610f817145949ad08f5e93595a9f,
     type: 2}
   m_PrefabInternal: {fileID: 2071292999}
---- !u!1 &2098704310 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1636048442629410, guid: 70d9258e43792434aa5f3724f608cf40,
-    type: 2}
-  m_PrefabInternal: {fileID: 1988866713}
---- !u!114 &2098704312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098704310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42e7544a8faa09a49bc79b045ed85019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2139120598
 Prefab:
   m_ObjectHideFlags: 0

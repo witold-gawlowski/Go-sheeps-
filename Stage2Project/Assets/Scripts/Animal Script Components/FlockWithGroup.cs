@@ -96,7 +96,7 @@ public class FlockWithGroup : MonoBehaviour
 
     for (int count = 0; count < individuals.Length; ++count)
     {
-      if (individuals[count].gameObject != gameObject && individuals[count].tag != "Player")
+      if (individuals[count].gameObject != gameObject && ! (individuals[count].tag == "Player"  && tag == "Sheep"))
       {
         Vector3 difference = WrapPosition.WrapDifference(individuals[count].transform.position, transform.position);
         if (difference.magnitude <= BuddyDistance)

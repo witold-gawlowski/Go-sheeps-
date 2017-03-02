@@ -1,9 +1,70 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-//I was using these resources while implementing highscores:
-//http://wiki.unity3d.com/index.php?title=Server_Side_Highscores
-//https://www.scirra.com/tutorials/4839/creating-your-own-leaderboard-highscores-easy-and-free-php-mysql/page-1
+/*I was using these resources while implementing highscores:
+* http://wiki.unity3d.com/index.php?title=Server_Side_Highscores
+* https://www.scirra.com/tutorials/4839/creating-your-own-leaderboard-highscores-easy-and-free-php-mysql/page-1
+* 
+* Most of below code is not mine. Comments are also not mine. 
+* 
+* I decided to include here also sever side code.
+* 
+* "addscore.php":
+
+  <?php
+        // Configuration
+        $hostname = 'localhost';
+        $username = 'id884607_nibylev';
+        $password = '123456';
+        $database = 'id884607_highscores';
+ 
+        $secretKey = "mySecretKey"; // Change this value to match the value stored in the client javascript below 
+ 
+        try {
+            $dbh = new PDO('mysql:host='. $hostname .';dbname='. $database, $username, $password);
+        } catch(PDOException $e) {
+            echo '<h1>An error has ocurred.</h1><pre>', $e->getMessage() ,'</pre>';
+        }
+ 
+        $realHash = md5($_GET['name'] . $_GET['score'] . $_GET['levelID'] . $secretKey); 
+        //if($realHash == $hash) { 
+            $sth = $dbh->prepare('INSERT INTO scores(name, score, levelID) VALUES (:name, :score, :levelID) ON DUPLICATE KEY UPDATE score = IF(:score>score, score , :score)');
+            try {
+                $sth->execute($_GET);
+            } catch(Exception $e) {
+                echo '<h1>An error has ocurred.</h1><pre>', $e->getMessage() ,'</pre>';
+            }
+        //} 
+?>
+
+* display.php:
+
+  <?php
+    // Configuration
+    $hostname = 'localhost';
+    $username = 'id884607_nibylev';
+    $password = '123456';
+    $database = 'id884607_highscores';
+
+    try {
+        $dbh = new PDO('mysql:host='. $hostname .';dbname='. $database, $username, $password);
+    } catch(PDOException $e) {
+        echo '<h1>An error has occurred.</h1><pre>', $e->getMessage() ,'</pre>';
+    }
+    $levelName = $_GET['levelID'];
+    $sth = $dbh->query('SELECT * FROM scores WHERE levelID="' . $levelName . '" ORDER BY score ASC LIMIT 10');
+    $sth->setFetchMode(PDO::FETCH_ASSOC);
+
+    $result = $sth->fetchAll();
+
+    if(count($result) > 0) {
+        foreach($result as $r) {
+            echo $r['name'], ":\t  ", $r['score'], "s\n";
+        }
+    }
+?>
+*/
+
 
 public class HSManager : MonoBehaviour
 {

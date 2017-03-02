@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MagnetizedByPlayer : MonoBehaviour
+public class RepellFromDogs : MonoBehaviour
 {
   public enum Type { Attract, Repel }
 

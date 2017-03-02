@@ -12,13 +12,13 @@ public class GrassScript : MonoBehaviour
     {
       other.gameObject.SendMessageUpwards("EnterGrass");
     }
-   
   }
 
   public void OnTriggerStay(Collider other)
   {
     if (other.tag == "Sheep")
     {
+      //todo: refactor so that getcomponent is not called every frame
       Rigidbody otherRigidbody = other.GetComponentInParent<Rigidbody>();
       Vector3 sheepToGrass = other.transform.position - transform.position;
       otherRigidbody.AddForce(-sheepToGrass * grassAttractionFroce);

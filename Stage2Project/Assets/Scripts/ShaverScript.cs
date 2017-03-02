@@ -45,7 +45,7 @@ public class ShaverScript : MonoBehaviour
 
   public void OnTriggerEnter(Collider other)
   {
-    FurManager furManager = other.GetComponent<FurManager>();
+    FurScript furManager = other.GetComponent<FurScript>();
     if (furManager && furManager.furColor == farmType && ! furManager.IsShaved())
     {
       furManager.Shave();

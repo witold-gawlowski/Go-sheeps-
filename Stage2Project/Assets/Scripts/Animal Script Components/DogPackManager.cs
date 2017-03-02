@@ -9,6 +9,7 @@ public class DogPackManager : MonoBehaviour
   private GameObject shepardPrefab;
   //todo: make it private
   public List<ShepherdScript> shepards;
+
   public GroupTag.Group Affiliation { get; private set; }
 
   [HideInInspector]
@@ -38,12 +39,14 @@ public class DogPackManager : MonoBehaviour
     if (CurrentShop && ShaverScript.BallsOfYarn >= CurrentShop.GetPrice())
     {
       ShaverScript.BallsOfYarn -= CurrentShop.GetPrice();
+
       GameObject shepardObject = Instantiate(shepardPrefab, transform.position, Quaternion.identity);
       GroupTag groupTag = shepardObject.GetComponent<GroupTag>();
       groupTag.Affiliation = Affiliation;
       ShepherdScript shepardScript = shepardObject.GetComponent<ShepherdScript>();
+
       shepards.Add(shepardScript);
-      MagnetizedByPlayer.RegisterShepard(shepardScript.gameObject);
+      RepellFromDogs.RegisterShepard(shepardScript.gameObject);
       CurrentShop.UpdateGUI();
     }
   }

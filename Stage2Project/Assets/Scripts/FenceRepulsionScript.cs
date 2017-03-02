@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FenceRepulsionScript : MonoBehaviour {
 
-  //To reduce bouncyness I can consider increasing drag in trigger enter and reducing it on trigger exit. 
+  //To reduce bouncyness I consider increasing drag in trigger enter and reducing it on trigger exit. 
 
   [SerializeField]
   private float repulsionCoefficient = 30000.0f;
@@ -19,9 +19,10 @@ public class FenceRepulsionScript : MonoBehaviour {
       return;
     }
     float perpendicularDistance = Vector3.Dot(other.transform.position - transform.position, transform.right);
-    Debug.DrawRay(other.transform.position, transform.right / perpendicularDistance);
+    //Debug.DrawRay(other.transform.position, transform.right / perpendicularDistance);
     Vector3 force = transform.right / (Mathf.Abs(perpendicularDistance) * perpendicularDistance) * Time.deltaTime * repulsionCoefficient;
     force = Vector3.ClampMagnitude(force, forceCap);
+    //todo: register colliding bodies in OnTriggerEnter and Exit in odrder to reduce GetComponent calls. 
     other.GetComponentInParent<Rigidbody>().AddForce(force);
   }
 }

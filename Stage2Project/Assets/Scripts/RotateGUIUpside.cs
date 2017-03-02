@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateWorldGUI : MonoBehaviour {
+public class RotateGUIUpside : MonoBehaviour {
   void Start()
   {
     Camera camera = GameObject.FindGameObjectWithTag("LevelPrefab").GetComponentInChildren<Camera>();
