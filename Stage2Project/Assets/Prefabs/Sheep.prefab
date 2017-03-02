@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162436080353560}
   m_LocalRotation: {x: -0, y: -0.71636283, z: -0, w: 0.6977279}
-  m_LocalPosition: {x: -1.7349892, y: 15.05929, z: -12.985201}
+  m_LocalPosition: {x: 21.93458, y: 5.659524, z: -12.751401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458585293796970}
@@ -285,8 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606be725f206d348bbd67f45cded157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 1
-  speedLimitingFactor: 0.5
+  MaxSpeed: 0
+  speedLimitingFactor: 300
 --- !u!114 &114611092410105980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,7 +318,7 @@ MonoBehaviour:
   lambDuration: 15
   growDuration: 0.3
   initialSize: 0.7
-  maxBreedingBuddyCount: 13
+  maxBreedingBuddyCount: 11
   minBreedingBuddyCount: 1
   sheepParent: {fileID: 0}
 --- !u!114 &114682315256986722
@@ -336,7 +336,7 @@ MonoBehaviour:
   grownFurWidth: 1
   shavedMaterial: {fileID: 2100000, guid: 6d7dca0c817fa8440957cbaefbe49fcf, type: 2}
   fullHairMaterial: {fileID: 2100000, guid: 5484a505d692a10419f52d14fe4f2338, type: 2}
-  furGrowthDuration: 20
+  furGrowthDuration: 15
   grassFurGrowthSpeedMultiplier: 2
   furColor: 0
 --- !u!114 &114796538832195036

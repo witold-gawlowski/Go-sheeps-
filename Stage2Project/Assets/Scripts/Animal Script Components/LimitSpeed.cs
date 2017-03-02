@@ -22,7 +22,7 @@ public class LimitSpeed : MonoBehaviour
     float excess = mBody.velocity.magnitude - MaxSpeed;
     if (excess > 0)
     {
-      mBody.AddForce(-mBody.velocity.normalized*excess*speedLimitingFactor);
+      mBody.AddForce(-mBody.velocity.normalized*excess*speedLimitingFactor*Time.deltaTime);
     }
   }
 }
