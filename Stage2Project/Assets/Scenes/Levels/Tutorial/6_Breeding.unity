@@ -134,10 +134,10 @@ Prefab:
     - target: {fileID: 114586473543158344, guid: 16e50c976994a6446bd3058d4b834132,
         type: 2}
       propertyPath: m_Text
-      value: 'TUTORIAL 6/7:
+      value: 'TUTORIAL 6/6:
 
 
-        This level be self exlpanatory.'
+        This level should be self explanatory. '
       objectReference: {fileID: 0}
     - target: {fileID: 4638452216974508, guid: 16e50c976994a6446bd3058d4b834132, type: 2}
       propertyPath: m_LocalRotation.x
@@ -487,7 +487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
       propertyPath: m_LocalScale.x
-      value: 25.019552
+      value: 12.949318
       objectReference: {fileID: 0}
     - target: {fileID: 64148433582540850, guid: 766d512ee0eae3141b73d21ff29d6ef2,
         type: 2}

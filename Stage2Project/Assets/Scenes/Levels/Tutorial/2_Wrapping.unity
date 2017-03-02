@@ -289,7 +289,7 @@ Prefab:
     - target: {fileID: 114586473543158344, guid: 16e50c976994a6446bd3058d4b834132,
         type: 2}
       propertyPath: m_Text
-      value: 'TUTORIAL 2/7:
+      value: 'TUTORIAL 2/6:
 
 
         just like this text! Levels wrap
@@ -2389,7 +2389,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4386499938503396, guid: 766d512ee0eae3141b73d21ff29d6ef2, type: 2}
       propertyPath: m_LocalScale.x
-      value: 18.416807
+      value: 12.949318
       objectReference: {fileID: 0}
     - target: {fileID: 114602649155593434, guid: 766d512ee0eae3141b73d21ff29d6ef2,
         type: 2}

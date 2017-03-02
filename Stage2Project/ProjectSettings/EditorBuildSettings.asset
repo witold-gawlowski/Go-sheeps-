@@ -35,3 +35,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Targeting.unity
   - enabled: 1
     path: Assets/Scenes/Levels/TaskSpecialization.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Splitter.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/PassingHeards.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/GrassGrid.unity
