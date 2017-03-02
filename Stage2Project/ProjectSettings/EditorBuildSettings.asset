@@ -24,8 +24,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial/6_Breeding.unity
   - enabled: 1
-    path: Assets/Scenes/Levels/Tutorial/7_Dogs.unity
-  - enabled: 1
     path: Assets/Scenes/Levels/BreedingCages.unity
   - enabled: 1
     path: Assets/Scenes/Levels/Segregation.unity
