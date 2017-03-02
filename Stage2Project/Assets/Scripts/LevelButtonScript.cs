@@ -50,7 +50,6 @@ public class LevelButtonScript : MonoBehaviour
 
   public void LevelComplete(float ignore, LevelButtonScript levelButton)
   {
-    print(levelButton.name + " " + this.name);
     if (levelButton == this)
     {
       if (nextLevel)

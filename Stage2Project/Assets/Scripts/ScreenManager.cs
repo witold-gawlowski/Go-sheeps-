@@ -124,7 +124,6 @@ public class ScreenManager : MonoBehaviour
       Scene scene = SceneManager.GetSceneAt(i);
       if(scene.name != "Load" && scene.name != "UI")
       {
-        print("unload " + scene.name);
         SceneManager.UnloadSceneAsync(scene.name);
       }
     }
